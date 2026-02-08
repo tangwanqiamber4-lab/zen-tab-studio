@@ -8,6 +8,7 @@ import Exercise from "./pages/Exercise";
 import Shop from "./pages/Shop";
 import Profile from "./pages/Profile";
 import AIRecommend from "./pages/AIRecommend";
+import TrainingDetail from "./pages/TrainingDetail";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const AppContent = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/ai-recommend" element={<AIRecommend />} />
+          <Route path="/training-detail" element={<TrainingDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
