@@ -4,17 +4,19 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 220 20% 15%;
+    --background: 0 0% 97%;
+    --foreground: 0 0% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 0 0% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 0 0% 17%;
 
     --primary: 228 30% 43%;
     --primary-foreground: 0 0% 100%;
+
+    --primary-light: 228 35% 57%;
 
     --keep-green: 152 100% 38%;
     --keep-green-foreground: 0 0% 100%;
@@ -22,8 +24,8 @@
     --secondary: 215 100% 67%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 90%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 0 0% 60%;
+    --muted-foreground: 0 0% 60%;
 
     --accent: 263 93% 76%;
     --accent-foreground: 0 0% 100%;
@@ -34,15 +36,24 @@
     --pink: 340 100% 71%;
     --orange: 27 100% 63%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
     --ring: 152 100% 38%;
 
     --radius: 0.75rem;
 
     --tab-bar-bg: 0 0% 100%;
-    --tab-bar-border: 220 13% 91%;
-    --tab-inactive: 220 10% 60%;
+    --tab-inactive: 0 0% 60%;
+
+    /* Hero gradient */
+    --hero-from: 228 30% 43%;
+    --hero-to: 228 35% 57%;
+
+    /* Notification dot */
+    --dot: 0 84% 55%;
+
+    /* Shadow tokens */
+    --shadow-topbar: 0 2px 12px rgba(0, 0, 0, 0.04);
   }
 }
 
@@ -53,7 +64,28 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-from)) 0%, hsl(var(--hero-to)) 100%);
+  }
+}
+
+@keyframes bounce-down {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-down {
+  animation: bounce-down 1.8s ease-in-out infinite;
 }
