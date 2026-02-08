@@ -1,3 +1,4 @@
+import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
@@ -9,6 +10,7 @@ import Shop from "./pages/Shop";
 import Profile from "./pages/Profile";
 import AIRecommend from "./pages/AIRecommend";
 import TrainingDetail from "./pages/TrainingDetail";
+import Workout from "./pages/Workout";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -29,6 +31,7 @@ const AppContent = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/ai-recommend" element={<AIRecommend />} />
           <Route path="/training-detail" element={<TrainingDetail />} />
+          <Route path="/workout" element={<Workout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
@@ -40,6 +43,7 @@ const AppContent = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <Sonner />
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>
