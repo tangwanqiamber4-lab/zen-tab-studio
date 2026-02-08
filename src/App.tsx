@@ -11,6 +11,10 @@ import Profile from "./pages/Profile";
 import AIRecommend from "./pages/AIRecommend";
 import TrainingDetail from "./pages/TrainingDetail";
 import Workout from "./pages/Workout";
+import AICorrection from "./pages/AICorrection";
+import AINutrition from "./pages/AINutrition";
+import AIInsights from "./pages/AIInsights";
+import AICompanion from "./pages/AICompanion";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const AppContent = () => {
           <Route path="/ai-recommend" element={<AIRecommend />} />
           <Route path="/training-detail" element={<TrainingDetail />} />
           <Route path="/workout" element={<Workout />} />
+          <Route path="/ai-correction" element={<AICorrection />} />
+          <Route path="/ai-nutrition" element={<AINutrition />} />
+          <Route path="/ai-insights" element={<AIInsights />} />
+          <Route path="/ai-companion" element={<AICompanion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
