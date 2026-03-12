@@ -51,20 +51,10 @@ const Training = () => {
       </section>
 
       {/* 快捷入口 */}
-      <section className="mx-5 mt-4 grid grid-cols-2 gap-3">
-        <button
-          onClick={() => navigate("/ai-correction")}
-          className="bg-card rounded-xl border border-primary/10 p-4 flex items-center gap-3 text-left transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <span className="text-2xl">📹</span>
-          <div>
-            <p className="text-sm font-bold text-foreground">AI 教练纠正</p>
-            <p className="text-[10px] text-muted-foreground">实时动作指导</p>
-          </div>
-        </button>
+      <section className="mx-5 mt-4">
         <button
           onClick={() => navigate("/ai-recommend")}
-          className="bg-card rounded-xl border border-primary/10 p-4 flex items-center gap-3 text-left transition-all duration-300 hover:-translate-y-0.5"
+          className="w-full bg-card rounded-xl border border-primary/10 p-4 flex items-center gap-3 text-left transition-all duration-300 hover:-translate-y-0.5"
         >
           <span className="text-2xl">⚡</span>
           <div>
