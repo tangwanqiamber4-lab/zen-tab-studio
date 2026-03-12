@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { X, Check } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export interface AIFeatureData {
   route: string;
@@ -18,47 +18,31 @@ const AIFeatureCard = ({ feature }: { feature: AIFeatureData }) => {
   return (
     <div
       onClick={() => navigate(feature.route)}
-      className="bg-card rounded-xl border border-primary/10 overflow-hidden cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+      className="bg-card rounded-xl border border-primary/10 p-4 cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center gap-4"
     >
-      {/* Visual area */}
-      <div className="hero-gradient flex items-center justify-center" style={{ height: 240 }}>
-        <span className="text-[80px] leading-none select-none">{feature.emoji}</span>
+      {/* Emoji */}
+      <span className="text-[36px] leading-none select-none flex-shrink-0">{feature.emoji}</span>
+
+      {/* Info */}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2">
+          <h3 className="text-sm font-bold text-foreground truncate">{feature.title}</h3>
+          <span
+            className="flex-shrink-0 text-[10px] text-white font-medium rounded-full px-2 py-0.5"
+            style={{ backgroundColor: feature.tagColor }}
+          >
+            {feature.tagLabel}
+          </span>
+        </div>
+        <p className="text-xs text-muted-foreground mt-1 truncate">
+          <span className="line-through opacity-60">{feature.pastProblem}</span>
+          <span className="mx-1.5">→</span>
+          <span className="text-keep-green font-medium">{feature.nowSolution}</span>
+        </p>
       </div>
 
-      {/* Info area */}
-      <div className="p-6">
-        {/* Tag */}
-        <span
-          className="inline-block text-xs text-white font-medium rounded-full px-3 py-1 mb-4"
-          style={{ backgroundColor: feature.tagColor }}
-        >
-          {feature.tagLabel}
-        </span>
-
-        {/* Title */}
-        <h3 className="text-2xl font-bold text-foreground mb-5">{feature.title}</h3>
-
-        {/* Past vs Now comparison */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="space-y-2">
-            <p className="text-xs text-muted-foreground">过去</p>
-            <p className="text-sm text-foreground">{feature.pastProblem}</p>
-            <X size={16} className="text-destructive" strokeWidth={2.5} />
-          </div>
-          <div className="space-y-2">
-            <p className="text-xs text-muted-foreground">现在</p>
-            <p className="text-sm text-foreground">{feature.nowSolution}</p>
-            <Check size={16} className="text-keep-green" strokeWidth={2.5} />
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="flex justify-end">
-          <button className="bg-keep-green text-keep-green-foreground text-sm font-medium rounded-lg transition-transform duration-200 hover:-translate-y-0.5" style={{ width: 120, height: 40 }}>
-            {feature.ctaText}
-          </button>
-        </div>
-      </div>
+      {/* Arrow */}
+      <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
     </div>
   );
 };
