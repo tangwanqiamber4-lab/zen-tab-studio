@@ -58,8 +58,8 @@ const Training = () => {
         >
           <span className="text-2xl">📹</span>
           <div>
-            <p className="text-sm font-bold text-foreground">AI 动作纠正</p>
-            <p className="text-[10px] text-muted-foreground">实时语音指导</p>
+            <p className="text-sm font-bold text-foreground">AI 教练纠正</p>
+            <p className="text-[10px] text-muted-foreground">实时动作指导</p>
           </div>
         </button>
         <button
