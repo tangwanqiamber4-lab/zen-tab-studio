@@ -1,11 +1,10 @@
-import { Home, User, ShoppingBag, Dumbbell, PersonStanding } from "lucide-react";
+import { Home, Dumbbell, Heart, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const tabs = [
   { path: "/", label: "首页", icon: Home },
-  { path: "/coach", label: "教练", icon: PersonStanding },
-  { path: "/exercise", label: "运动", icon: Dumbbell },
-  { path: "/shop", label: "商城", icon: ShoppingBag },
+  { path: "/training", label: "训练", icon: Dumbbell },
+  { path: "/health", label: "健康", icon: Heart },
   { path: "/profile", label: "我的", icon: User },
 ];
 
@@ -33,7 +32,6 @@ const TabBar = () => {
           );
         })}
       </div>
-      {/* Safe area for iOS */}
       <div className="h-[env(safe-area-inset-bottom)] bg-card" />
     </nav>
   );
