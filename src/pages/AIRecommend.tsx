@@ -36,7 +36,7 @@ const AIRecommend = () => {
         <div className="relative h-[200px] overflow-hidden">
           <img src={coverHiit} alt="20分钟HIIT燃脂" className="w-full h-full object-cover" />
           <span className="absolute top-3 left-3 text-xs text-white font-medium rounded-md px-2.5 py-1 bg-accent">
-            AI定制
+            AI 教练定制
           </span>
         </div>
 

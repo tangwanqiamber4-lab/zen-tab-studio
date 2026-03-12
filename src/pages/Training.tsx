@@ -68,8 +68,8 @@ const Training = () => {
         >
           <span className="text-2xl">⚡</span>
           <div>
-            <p className="text-sm font-bold text-foreground">AI 训练推荐</p>
-            <p className="text-[10px] text-muted-foreground">智能匹配课程</p>
+            <p className="text-sm font-bold text-foreground">AI 教练推荐</p>
+            <p className="text-[10px] text-muted-foreground">智能匹配训练课程</p>
           </div>
         </button>
       </section>

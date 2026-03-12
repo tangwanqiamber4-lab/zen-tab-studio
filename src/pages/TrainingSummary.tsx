@@ -50,11 +50,11 @@ const TrainingSummary = () => {
         </div>
       </section>
 
-      {/* AI 动作分析 */}
+      {/* AI 教练动作分析 */}
       <section className="mx-5 mt-4 bg-card rounded-xl border border-border p-4">
         <div className="flex items-center gap-2 mb-3">
           <Brain size={18} className="text-keep-green" />
-          <h2 className="text-sm font-bold text-foreground">AI 动作分析</h2>
+          <h2 className="text-sm font-bold text-foreground">AI 教练动作分析</h2>
         </div>
 
         <div className="space-y-2.5">
