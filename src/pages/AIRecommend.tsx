@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import PageHeader from "@/components/PageHeader";
+import coverHiit from "@/assets/cover-hiit.jpg";
+import coverAbs from "@/assets/cover-abs.jpg";
+import coverFullbody from "@/assets/cover-fullbody.jpg";
+import coverYoga from "@/assets/cover-yoga.jpg";
 
 const alternatives = [
   { title: "15分钟腹肌撕裂", duration: "15分钟", color: "bg-accent/20" },
