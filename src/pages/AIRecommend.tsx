@@ -27,7 +27,7 @@ const AIRecommend = () => {
           <p>✓ 最近训练：3天前</p>
           <p>✓ 目标：减脂</p>
         </div>
-        <p className="mt-4 text-base font-semibold text-primary-foreground">AI建议：中等强度有氧训练</p>
+        <p className="mt-4 text-base font-semibold text-primary-foreground">AI 教练建议：中等强度有氧训练</p>
       </div>
 
       {/* Today's Recommended Training */}
