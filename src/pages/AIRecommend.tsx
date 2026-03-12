@@ -6,9 +6,9 @@ import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
 
 const alternatives = [
-  { title: "15分钟腹肌撕裂", duration: "15分钟", color: "bg-accent/20" },
-  { title: "30分钟全身燃脂", duration: "30分钟", color: "bg-secondary/20" },
-  { title: "瑜伽拉伸放松", duration: "25分钟", color: "bg-pink/20" },
+  { title: "15分钟腹肌撕裂", duration: "15分钟", cover: coverAbs },
+  { title: "30分钟全身燃脂", duration: "30分钟", cover: coverFullbody },
+  { title: "瑜伽拉伸放松", duration: "25分钟", cover: coverYoga },
 ];
 
 const AIRecommend = () => {
