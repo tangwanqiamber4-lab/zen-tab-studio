@@ -76,12 +76,13 @@ export const useFoodRecords = create<FoodRecordsState>((set, get) => ({
     const today = getToday();
     const todayRecords = get().records.filter((r) => r.date === today);
     return todayRecords.reduce(
-      (acc, r) => ({
-        calories: acc.calories + r.calories,
-        protein: acc.protein + r.protein,
-        carbs: acc.carbs + r.carbs,
-        fat: acc.fat + r.fat,
-      }),
+      (acc, r) => {
+        acc.calories += r.calories;
+        acc.protein += r.protein;
+        acc.carbs += r.carbs;
+        acc.fat += r.fat;
+        return acc;
+      },
       { calories: 0, protein: 0, carbs: 0, fat: 0 }
     );
   },
