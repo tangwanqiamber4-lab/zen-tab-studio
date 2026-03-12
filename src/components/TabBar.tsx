@@ -1,10 +1,10 @@
-import { Home, Dumbbell, Heart, User } from "lucide-react";
+import { Brain, BookOpen, Apple, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const tabs = [
-  { path: "/", label: "首页", icon: Home },
-  { path: "/training", label: "训练", icon: Dumbbell },
-  { path: "/health", label: "健康", icon: Heart },
+  { path: "/", label: "AI教练", icon: Brain },
+  { path: "/training", label: "课程库", icon: BookOpen },
+  { path: "/health", label: "营养", icon: Apple },
   { path: "/profile", label: "我的", icon: User },
 ];
 

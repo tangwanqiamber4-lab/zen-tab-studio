@@ -26,33 +26,6 @@ const Training = () => {
     <div className="flex flex-col">
       <TopBar />
 
-      {/* 今日推荐训练 */}
-      <section className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 overflow-hidden">
-        <div className="relative h-[140px] overflow-hidden">
-          <img src={coverHiit} alt="今日推荐训练" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <span className="absolute top-2.5 left-3 text-[9px] text-white font-semibold rounded-md px-2 py-0.5 bg-accent">
-            AI 推荐
-          </span>
-          <div className="absolute bottom-3 left-4 right-4">
-            <p className="text-white text-base font-bold">20分钟HIIT燃脂</p>
-            <p className="text-white/80 text-xs mt-0.5">AI 根据你的状态推荐 · 强度 K3</p>
-          </div>
-        </div>
-        <div className="p-4 flex items-center justify-between">
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1"><Clock size={14} /> 20分钟</span>
-            <span className="flex items-center gap-1"><Flame size={14} /> 220卡</span>
-          </div>
-          <button
-            onClick={() => navigate("/training-detail")}
-            className="h-9 px-5 bg-keep-green text-keep-green-foreground font-semibold text-sm rounded-lg transition-transform duration-200 hover:-translate-y-0.5"
-          >
-            开始训练
-          </button>
-        </div>
-      </section>
-
       {/* 全部课程 */}
       <section className="mx-5 mt-5">
         <h2 className="text-base font-bold text-foreground mb-3">全部课程</h2>
