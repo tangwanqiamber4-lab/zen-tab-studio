@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, Target, Settings, Crown, UserCircle, ClipboardEdit } from "lucide-react";
+import { ChevronRight, Target, Settings, Crown, UserCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const menuItems = [
