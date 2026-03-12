@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, CalendarDays, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
+import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
+import coverPorridge from "@/assets/cover-porridge.jpg";
+import coverFish from "@/assets/cover-steamed-fish.jpg";
 
 /* ── Date helpers ── */
 const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"];
