@@ -40,6 +40,7 @@ const AppContent = () => {
           <Route path="/ai-nutrition" element={<AINutrition />} />
           <Route path="/ai-insights" element={<AIInsights />} />
           <Route path="/ai-companion" element={<AICompanion />} />
+          <Route path="/daily-status" element={<DailyStatus />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
