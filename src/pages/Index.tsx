@@ -38,8 +38,8 @@ const Index = () => {
   const sleepDisplay = ai?.sleep ?? "7h";
   const weightDisplay = ai ? `${ai.weight}kg` : "62kg";
   const analysisLines = ai?.analysis ?? [
-    "今日体能恢复良好，适合中等强度训练",
-    "本周已训练2次，建议完成第3次",
+    "根据你的睡眠（7h）和体能状态，今天适合中等强度训练",
+    "本周已训练2次，建议完成第3次训练",
   ];
   const training = ai?.training ?? {
     name: "20分钟HIIT燃脂",
