@@ -4,9 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import TabBar from "./components/TabBar";
 import Index from "./pages/Index";
-import Coach from "./pages/Coach";
-import Exercise from "./pages/Exercise";
-import Shop from "./pages/Shop";
+import Training from "./pages/Training";
+import Health from "./pages/Health";
 import Profile from "./pages/Profile";
 import AIRecommend from "./pages/AIRecommend";
 import TrainingDetail from "./pages/TrainingDetail";
@@ -16,9 +15,10 @@ import AINutrition from "./pages/AINutrition";
 import AIInsights from "./pages/AIInsights";
 import AICompanion from "./pages/AICompanion";
 import NotFound from "./pages/NotFound";
+
 const queryClient = new QueryClient();
 
-const tabRoutes = ["/", "/coach", "/exercise", "/shop", "/profile"];
+const tabRoutes = ["/", "/training", "/health", "/profile"];
 
 const AppContent = () => {
   const location = useLocation();
@@ -29,9 +29,8 @@ const AppContent = () => {
       <main className={showTabBar ? "pb-16" : ""}>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/coach" element={<Coach />} />
-          <Route path="/exercise" element={<Exercise />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/health" element={<Health />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/ai-recommend" element={<AIRecommend />} />
           <Route path="/training-detail" element={<TrainingDetail />} />
