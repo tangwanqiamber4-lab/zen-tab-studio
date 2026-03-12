@@ -263,14 +263,14 @@ const AINutrition = () => {
 
       {/* ── Free usage ── */}
       <div className="mx-5 mt-5 bg-card rounded-xl border border-primary/10 p-4">
-        <p className="text-sm font-semibold text-foreground">今日免费AI分析：0 / 1次</p>
+        <p className="text-sm font-semibold text-foreground">今日免费 AI 营养师分析：0 / 1次</p>
         <div className="mt-3 h-2 bg-muted/40 rounded-full overflow-hidden">
           <div className="h-full w-0 bg-keep-green rounded-full" />
         </div>
         <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
           升级会员享：
           <br />
-          ✓ 无限次AI营养分析
+          ✓ 无限次 AI 营养师分析
           <br />
           ✓ 个性化食谱定制
           <br />
