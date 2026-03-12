@@ -79,12 +79,16 @@ const Index = () => {
       </section>
 
       {/* AI 教练建议 */}
-      <section className="mx-5 mt-3 hero-gradient rounded-xl px-4 py-3 flex items-start gap-2.5">
-        <Brain size={16} className="text-primary-foreground mt-0.5 flex-shrink-0" />
+      <section className="mx-5 mt-3 hero-gradient rounded-xl px-4 py-3">
+        <div className="flex items-center gap-2 mb-2">
+          <Brain size={16} className="text-primary-foreground flex-shrink-0" />
+          <span className="text-sm font-bold text-primary-foreground">AI 教练建议</span>
+        </div>
         <div className="space-y-1 text-sm text-primary-foreground/90">
           {analysisLines.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
+          <p className="mt-2 font-medium text-primary-foreground">推荐训练：{training.name}</p>
         </div>
       </section>
 
