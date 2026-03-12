@@ -128,20 +128,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 健康管理入口 */}
-      <section className="mx-5 mt-3">
-        <button
-          onClick={() => navigate("/health")}
-          className="w-full bg-card rounded-xl border border-primary/10 px-4 py-3.5 flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md text-left"
-        >
-          <span className="text-2xl">💚</span>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-foreground">健康管理</p>
-            <p className="text-[10px] text-muted-foreground">查看营养摄入与身体数据分析</p>
-          </div>
-          <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
-        </button>
-      </section>
 
       {/* 会员订阅 */}
       <section className="mx-5 mt-3 mb-6">

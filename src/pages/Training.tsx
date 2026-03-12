@@ -7,7 +7,7 @@ import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
 
 const courses = [
-  { title: "20分钟HIIT燃脂", duration: "20分钟", cal: 220, level: "K3", cover: coverHiit, tag: "AI 教练推荐" },
+  { title: "20分钟HIIT燃脂", duration: "20分钟", cal: 220, level: "K3", cover: coverHiit, tag: "热门" },
   { title: "15分钟腹肌撕裂", duration: "15分钟", cal: 150, level: "K2", cover: coverAbs, tag: "" },
   { title: "30分钟全身燃脂", duration: "30分钟", cal: 320, level: "K4", cover: coverFullbody, tag: "热门" },
   { title: "瑜伽拉伸放松", duration: "25分钟", cal: 100, level: "K1", cover: coverYoga, tag: "" },
@@ -26,14 +26,17 @@ const Training = () => {
     <div className="flex flex-col">
       <TopBar />
 
-      {/* 今日训练任务 */}
+      {/* 今日推荐训练 */}
       <section className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 overflow-hidden">
         <div className="relative h-[140px] overflow-hidden">
-          <img src={coverHiit} alt="今日训练" className="w-full h-full object-cover" />
+          <img src={coverHiit} alt="今日推荐训练" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <span className="absolute top-2.5 left-3 text-[9px] text-white font-semibold rounded-md px-2 py-0.5 bg-accent">
+            AI 推荐
+          </span>
           <div className="absolute bottom-3 left-4 right-4">
-            <p className="text-white text-base font-bold">今日训练计划</p>
-            <p className="text-white/80 text-xs mt-0.5">20分钟HIIT燃脂 · AI 为你定制</p>
+            <p className="text-white text-base font-bold">20分钟HIIT燃脂</p>
+            <p className="text-white/80 text-xs mt-0.5">AI 根据你的状态推荐 · 强度 K3</p>
           </div>
         </div>
         <div className="p-4 flex items-center justify-between">
@@ -50,21 +53,7 @@ const Training = () => {
         </div>
       </section>
 
-      {/* 快捷入口 */}
-      <section className="mx-5 mt-4">
-        <button
-          onClick={() => navigate("/ai-recommend")}
-          className="w-full bg-card rounded-xl border border-primary/10 p-4 flex items-center gap-3 text-left transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <span className="text-2xl">⚡</span>
-          <div>
-            <p className="text-sm font-bold text-foreground">AI 教练推荐</p>
-            <p className="text-[10px] text-muted-foreground">智能匹配训练课程</p>
-          </div>
-        </button>
-      </section>
-
-      {/* 课程列表 */}
+      {/* 全部课程 */}
       <section className="mx-5 mt-5">
         <h2 className="text-base font-bold text-foreground mb-3">全部课程</h2>
         <div className="flex flex-col gap-3">
