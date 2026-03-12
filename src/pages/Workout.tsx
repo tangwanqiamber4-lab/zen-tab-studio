@@ -26,7 +26,7 @@ const Workout = () => {
 
   const handleFinish = () => {
     toast.success("训练已完成！");
-    setTimeout(() => navigate("/"), 800);
+    setTimeout(() => navigate("/training-summary"), 800);
   };
 
   return (
