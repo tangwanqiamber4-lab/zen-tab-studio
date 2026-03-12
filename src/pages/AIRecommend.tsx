@@ -16,7 +16,7 @@ const AIRecommend = () => {
 
   return (
     <div className="flex flex-col bg-background min-h-screen">
-      <PageHeader title="AI智能推荐" showShare />
+      <PageHeader title="AI 教练推荐" showShare />
 
       {/* AI Status Card */}
       <div className="mx-5 mt-5 hero-gradient rounded-xl p-6">
