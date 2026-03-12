@@ -15,6 +15,7 @@ import AINutrition from "./pages/AINutrition";
 import AIInsights from "./pages/AIInsights";
 import AICompanion from "./pages/AICompanion";
 import DailyStatus from "./pages/DailyStatus";
+import TrainingSummary from "./pages/TrainingSummary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
