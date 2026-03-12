@@ -42,6 +42,7 @@ const AppContent = () => {
           <Route path="/ai-insights" element={<AIInsights />} />
           <Route path="/ai-companion" element={<AICompanion />} />
           <Route path="/daily-status" element={<DailyStatus />} />
+          <Route path="/training-summary" element={<TrainingSummary />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
