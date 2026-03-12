@@ -7,7 +7,7 @@ import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
 
 const courses = [
-  { title: "20分钟HIIT燃脂", duration: "20分钟", cal: 220, level: "K3", cover: coverHiit, tag: "AI 推荐" },
+  { title: "20分钟HIIT燃脂", duration: "20分钟", cal: 220, level: "K3", cover: coverHiit, tag: "AI 教练推荐" },
   { title: "15分钟腹肌撕裂", duration: "15分钟", cal: 150, level: "K2", cover: coverAbs, tag: "" },
   { title: "30分钟全身燃脂", duration: "30分钟", cal: 320, level: "K4", cover: coverFullbody, tag: "热门" },
   { title: "瑜伽拉伸放松", duration: "25分钟", cal: 100, level: "K1", cover: coverYoga, tag: "" },
