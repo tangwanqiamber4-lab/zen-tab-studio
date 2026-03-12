@@ -20,7 +20,7 @@ const AIRecommend = () => {
 
       {/* AI Status Card */}
       <div className="mx-5 mt-5 hero-gradient rounded-xl p-6">
-        <p className="text-base font-semibold text-primary-foreground">🤖 AI正在分析你的数据...</p>
+        <p className="text-base font-semibold text-primary-foreground">🤖 AI 教练正在分析你的数据...</p>
         <div className="mt-3 space-y-1.5 text-sm text-primary-foreground/80">
           <p>✓ 睡眠质量：7小时</p>
           <p>✓ 体能状态：良好</p>
