@@ -78,7 +78,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI 智能分析 */}
+      {/* AI 教练建议 */}
       <section className="mx-5 mt-3 hero-gradient rounded-xl px-4 py-3 flex items-start gap-2.5">
         <Brain size={16} className="text-primary-foreground mt-0.5 flex-shrink-0" />
         <div className="space-y-1 text-sm text-primary-foreground/90">
