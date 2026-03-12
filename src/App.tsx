@@ -14,6 +14,7 @@ import AICorrection from "./pages/AICorrection";
 import AINutrition from "./pages/AINutrition";
 import AIInsights from "./pages/AIInsights";
 import AICompanion from "./pages/AICompanion";
+import DailyStatus from "./pages/DailyStatus";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const AppContent = () => {
           <Route path="/ai-nutrition" element={<AINutrition />} />
           <Route path="/ai-insights" element={<AIInsights />} />
           <Route path="/ai-companion" element={<AICompanion />} />
+          <Route path="/daily-status" element={<DailyStatus />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

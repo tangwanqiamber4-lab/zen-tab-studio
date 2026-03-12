@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, Target, Settings, Crown, UserCircle } from "lucide-react";
+import { ChevronRight, Target, Settings, Crown, UserCircle, ClipboardEdit } from "lucide-react";
 import { toast } from "sonner";
 
 const menuItems = [
@@ -60,6 +60,21 @@ const Profile = () => {
         </div>
         <button className="h-8 px-4 bg-keep-green text-keep-green-foreground text-xs font-semibold rounded-lg">
           升级
+        </button>
+      </section>
+
+      {/* 今日状态记录入口 */}
+      <section className="mx-5 mt-4">
+        <button
+          onClick={() => navigate("/daily-status")}
+          className="w-full bg-card rounded-xl border border-keep-green/20 px-4 py-4 flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md text-left"
+        >
+          <ClipboardEdit size={20} className="text-keep-green flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold text-foreground">今日状态记录</p>
+            <p className="text-[10px] text-muted-foreground">记录体重、睡眠和身体状态</p>
+          </div>
+          <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
         </button>
       </section>
 
