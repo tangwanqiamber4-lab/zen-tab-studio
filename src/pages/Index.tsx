@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, TrendingUp, Zap, Brain } from "lucide-react";
+import { ChevronRight, Brain } from "lucide-react";
 import TopBar from "@/components/home/TopBar";
 import coverHiit from "@/assets/cover-hiit.jpg";
 
