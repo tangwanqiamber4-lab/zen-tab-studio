@@ -58,9 +58,12 @@ const Index = () => {
       <section className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 p-4">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-bold text-foreground">今日身体状态</h2>
-          <span className="text-[10px] text-muted-foreground">
-            {ai ? `已记录 · ${new Date().toLocaleDateString("zh-CN", { month: "short", day: "numeric" })}` : "未记录"}
-          </span>
+          <button
+            onClick={() => navigate("/daily-status")}
+            className="text-[10px] text-keep-green font-medium"
+          >
+            {ai ? "更新今日状态" : "记录今日状态"} →
+          </button>
         </div>
         <div className="grid grid-cols-3 gap-3">
           <div className="flex flex-col items-center gap-0.5 bg-keep-green/[0.08] rounded-lg py-2.5">
