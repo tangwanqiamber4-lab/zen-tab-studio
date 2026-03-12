@@ -20,8 +20,8 @@ const TrainingDetail = () => {
       <PageHeader title="训练详情" />
 
       {/* Cover */}
-      <div className="relative h-[300px] bg-muted/40 flex items-center justify-center">
-        <span className="text-muted-foreground text-sm">训练封面图</span>
+      <div className="relative h-[300px] overflow-hidden">
+        <img src={coverHiit} alt="20分钟HIIT燃脂" className="w-full h-full object-cover" />
         <span className="absolute top-3 left-3 text-xs text-white font-medium rounded-md px-2.5 py-1 bg-accent">
           AI定制
         </span>

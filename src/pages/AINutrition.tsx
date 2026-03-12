@@ -206,8 +206,8 @@ const AINutrition = () => {
             key={r.name}
             className="flex-shrink-0 w-[280px] bg-card rounded-xl border border-primary/10 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
           >
-            <div className="h-40 bg-muted/30 flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">{r.name}</span>
+            <div className="h-40 overflow-hidden">
+              <img src={r.cover} alt={r.name} className="w-full h-full object-cover" />
             </div>
             <div className="p-4 space-y-2">
               <h4 className="text-base font-bold text-foreground">{r.name}</h4>

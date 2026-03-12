@@ -84,8 +84,8 @@ const AIRecommend = () => {
               onClick={() => navigate("/training-detail")}
               className="flex-shrink-0 w-40 bg-card rounded-lg border border-primary/10 overflow-hidden cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className={`h-24 ${alt.color} flex items-center justify-center`}>
-                <span className="text-xs text-muted-foreground">封面</span>
+              <div className="h-24 overflow-hidden">
+                <img src={alt.cover} alt={alt.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
                 <p className="text-sm font-semibold text-foreground truncate">{alt.title}</p>
