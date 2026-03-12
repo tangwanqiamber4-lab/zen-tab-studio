@@ -17,6 +17,7 @@ import AICompanion from "./pages/AICompanion";
 import DailyStatus from "./pages/DailyStatus";
 import TrainingSummary from "./pages/TrainingSummary";
 import FoodCamera from "./pages/FoodCamera";
+import FoodHistory from "./pages/FoodHistory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
