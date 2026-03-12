@@ -179,9 +179,9 @@ const AINutrition = () => {
         </div>
       </div>
 
-      {/* ── AI Insights ── */}
+      {/* ── AI 营养师发现 ── */}
       <div className="mx-5 mt-5 rounded-xl p-5 bg-keep-green/[0.08]">
-        <p className="text-sm font-bold text-keep-green">💡 AI发现</p>
+        <p className="text-sm font-bold text-keep-green">💡 AI 营养师发现</p>
         <div className="mt-4 space-y-4">
           {suggestions.map((s, i) => (
             <div key={i} className="flex gap-3">
