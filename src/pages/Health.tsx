@@ -72,7 +72,7 @@ const Health = () => {
       {/* 拍照记录今日饮食 */}
       <section className="mx-5 mt-4">
         <button
-          onClick={() => navigate("/ai-nutrition")}
+          onClick={() => navigate("/food-camera")}
           className="w-full bg-card rounded-2xl border-2 border-keep-green/20 p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md shadow-sm text-left"
         >
           <div className="w-14 h-14 rounded-xl bg-keep-green/10 flex items-center justify-center flex-shrink-0">
