@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import PageHeader from "@/components/PageHeader";
+import coverHiit from "@/assets/cover-hiit.jpg";
+import coverAbs from "@/assets/cover-abs.jpg";
+import coverFullbody from "@/assets/cover-fullbody.jpg";
+import coverYoga from "@/assets/cover-yoga.jpg";
 
 const alternatives = [
-  { title: "15分钟腹肌撕裂", duration: "15分钟", color: "bg-accent/20" },
-  { title: "30分钟全身燃脂", duration: "30分钟", color: "bg-secondary/20" },
-  { title: "瑜伽拉伸放松", duration: "25分钟", color: "bg-pink/20" },
+  { title: "15分钟腹肌撕裂", duration: "15分钟", cover: coverAbs },
+  { title: "30分钟全身燃脂", duration: "30分钟", cover: coverFullbody },
+  { title: "瑜伽拉伸放松", duration: "25分钟", cover: coverYoga },
 ];
 
 const AIRecommend = () => {
@@ -29,8 +33,8 @@ const AIRecommend = () => {
       {/* Today's Recommended Training */}
       <div className="mx-5 mt-5 bg-card rounded-xl border border-primary/10 overflow-hidden">
         {/* Cover */}
-        <div className="relative h-[200px] bg-muted/40 flex items-center justify-center">
-          <span className="text-muted-foreground text-sm">训练封面图</span>
+        <div className="relative h-[200px] overflow-hidden">
+          <img src={coverHiit} alt="20分钟HIIT燃脂" className="w-full h-full object-cover" />
           <span className="absolute top-3 left-3 text-xs text-white font-medium rounded-md px-2.5 py-1 bg-accent">
             AI定制
           </span>
@@ -80,8 +84,8 @@ const AIRecommend = () => {
               onClick={() => navigate("/training-detail")}
               className="flex-shrink-0 w-40 bg-card rounded-lg border border-primary/10 overflow-hidden cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className={`h-24 ${alt.color} flex items-center justify-center`}>
-                <span className="text-xs text-muted-foreground">封面</span>
+              <div className="h-24 overflow-hidden">
+                <img src={alt.cover} alt={alt.title} className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
                 <p className="text-sm font-semibold text-foreground truncate">{alt.title}</p>

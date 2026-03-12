@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, CalendarDays, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
+import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
+import coverPorridge from "@/assets/cover-porridge.jpg";
+import coverFish from "@/assets/cover-steamed-fish.jpg";
 
 /* ── Date helpers ── */
 const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"];
@@ -63,18 +66,21 @@ const recipes = [
     region: "家常菜",
     cal: 350, protein: 35, carb: 15, fat: 12,
     fit: "💚 适合减脂",
+    cover: coverChicken,
   },
   {
     name: "紫薯燕麦粥",
     region: "养生粥",
     cal: 280, protein: 8, carb: 52, fat: 3,
     fit: "🌅 适合早餐",
+    cover: coverPorridge,
   },
   {
     name: "清蒸鲈鱼",
     region: "粤菜",
     cal: 220, protein: 28, carb: 2, fat: 10,
     fit: "🥢 适合晚餐",
+    cover: coverFish,
   },
 ];
 
@@ -200,8 +206,8 @@ const AINutrition = () => {
             key={r.name}
             className="flex-shrink-0 w-[280px] bg-card rounded-xl border border-primary/10 overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
           >
-            <div className="h-40 bg-muted/30 flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">{r.name}</span>
+            <div className="h-40 overflow-hidden">
+              <img src={r.cover} alt={r.name} className="w-full h-full object-cover" />
             </div>
             <div className="p-4 space-y-2">
               <h4 className="text-base font-bold text-foreground">{r.name}</h4>
