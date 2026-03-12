@@ -47,11 +47,11 @@ const Health = () => {
         </div>
       </section>
 
-      {/* AI 营养分析 */}
+      {/* AI 营养师分析 */}
       <section className="mx-5 mt-4 bg-card rounded-xl border border-border p-4">
         <div className="flex items-center gap-2 mb-3">
           <Brain size={18} className="text-keep-green" />
-          <h2 className="text-sm font-bold text-foreground">AI 营养分析</h2>
+          <h2 className="text-sm font-bold text-foreground">AI 营养师分析</h2>
         </div>
         <div className="space-y-2.5">
           <div className="flex items-start gap-2 p-3 bg-orange/[0.06] rounded-lg">

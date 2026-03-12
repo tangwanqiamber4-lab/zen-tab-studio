@@ -78,7 +78,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI 智能分析 */}
+      {/* AI 教练建议 */}
       <section className="mx-5 mt-3 hero-gradient rounded-xl px-4 py-3 flex items-start gap-2.5">
         <Brain size={16} className="text-primary-foreground mt-0.5 flex-shrink-0" />
         <div className="space-y-1 text-sm text-primary-foreground/90">
@@ -88,13 +88,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI 今日训练建议 — 核心模块 */}
+      {/* AI 教练推荐训练 — 核心模块 */}
       <section className="mx-5 mt-3 bg-card rounded-2xl border-2 border-keep-green/20 overflow-hidden shadow-lg shadow-keep-green/[0.06]">
         <div className="relative h-[180px] overflow-hidden">
           <img src={getCover(training.name)} alt="今日推荐训练" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <span className="absolute top-3 left-3 text-[10px] text-white font-semibold rounded-md px-2.5 py-1 bg-accent">
-            AI 推荐
+            AI 教练推荐
           </span>
           <div className="absolute bottom-3 left-4 right-4">
             <h3 className="text-lg font-bold text-white">{training.name}</h3>

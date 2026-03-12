@@ -16,18 +16,18 @@ const AIRecommend = () => {
 
   return (
     <div className="flex flex-col bg-background min-h-screen">
-      <PageHeader title="AI智能推荐" showShare />
+      <PageHeader title="AI 教练推荐" showShare />
 
       {/* AI Status Card */}
       <div className="mx-5 mt-5 hero-gradient rounded-xl p-6">
-        <p className="text-base font-semibold text-primary-foreground">🤖 AI正在分析你的数据...</p>
+        <p className="text-base font-semibold text-primary-foreground">🤖 AI 教练正在分析你的数据...</p>
         <div className="mt-3 space-y-1.5 text-sm text-primary-foreground/80">
           <p>✓ 睡眠质量：7小时</p>
           <p>✓ 体能状态：良好</p>
           <p>✓ 最近训练：3天前</p>
           <p>✓ 目标：减脂</p>
         </div>
-        <p className="mt-4 text-base font-semibold text-primary-foreground">AI建议：中等强度有氧训练</p>
+        <p className="mt-4 text-base font-semibold text-primary-foreground">AI 教练建议：中等强度有氧训练</p>
       </div>
 
       {/* Today's Recommended Training */}
@@ -36,7 +36,7 @@ const AIRecommend = () => {
         <div className="relative h-[200px] overflow-hidden">
           <img src={coverHiit} alt="20分钟HIIT燃脂" className="w-full h-full object-cover" />
           <span className="absolute top-3 left-3 text-xs text-white font-medium rounded-md px-2.5 py-1 bg-accent">
-            AI定制
+            AI 教练定制
           </span>
         </div>
 
