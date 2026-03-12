@@ -33,8 +33,8 @@ const AIRecommend = () => {
       {/* Today's Recommended Training */}
       <div className="mx-5 mt-5 bg-card rounded-xl border border-primary/10 overflow-hidden">
         {/* Cover */}
-        <div className="relative h-[200px] bg-muted/40 flex items-center justify-center">
-          <span className="text-muted-foreground text-sm">训练封面图</span>
+        <div className="relative h-[200px] overflow-hidden">
+          <img src={coverHiit} alt="20分钟HIIT燃脂" className="w-full h-full object-cover" />
           <span className="absolute top-3 left-3 text-xs text-white font-medium rounded-md px-2.5 py-1 bg-accent">
             AI定制
           </span>
