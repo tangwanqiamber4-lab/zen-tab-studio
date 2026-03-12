@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
+import coverHiit from "@/assets/cover-hiit.jpg";
 
 const exercises = [
   { name: "开合跳", duration: "1分钟" },
