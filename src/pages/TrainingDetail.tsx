@@ -44,11 +44,24 @@ const TrainingDetail = () => {
 
       {/* AI Reason */}
       <div className="mx-5 mt-5 bg-card rounded-xl border-2 border-keep-green p-5">
-        <p className="text-base font-semibold text-foreground">💡 AI为你推荐的理由</p>
-        <div className="mt-3 space-y-2 text-sm text-foreground">
-          <p>✓ 强度适中，符合你当前水平</p>
-          <p>✓ 时间20分钟，适合你的碎片时间</p>
-          <p>✓ HIIT效果好，帮助你达成减脂目标</p>
+        <p className="text-base font-semibold text-foreground">💡 AI教练推荐理由</p>
+        <div className="mt-3 space-y-2.5 text-sm text-foreground">
+          <div className="flex items-start gap-2">
+            <span className="text-keep-green mt-0.5">●</span>
+            <p>睡眠时间：<span className="font-medium">7h</span>，恢复状态良好</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-keep-green mt-0.5">●</span>
+            <p>本周训练：<span className="font-medium">2次</span>，建议完成第3次训练</p>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-keep-green mt-0.5">●</span>
+            <p>当前目标：<span className="font-medium">减脂</span></p>
+          </div>
+        </div>
+        <div className="mt-4 pt-3 border-t border-border">
+          <p className="text-sm text-muted-foreground">因此推荐：</p>
+          <p className="text-base font-bold text-foreground mt-1">20分钟 HIIT燃脂训练</p>
         </div>
       </div>
 
