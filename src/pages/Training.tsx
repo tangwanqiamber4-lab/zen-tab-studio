@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, Clock, Flame, History } from "lucide-react";
+import { ChevronRight, History } from "lucide-react";
 import TopBar from "@/components/home/TopBar";
-import coverHiit from "@/assets/cover-hiit.jpg";
 import coverAbs from "@/assets/cover-abs.jpg";
 import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
