@@ -16,6 +16,7 @@ import AIInsights from "./pages/AIInsights";
 import AICompanion from "./pages/AICompanion";
 import DailyStatus from "./pages/DailyStatus";
 import TrainingSummary from "./pages/TrainingSummary";
+import TrainingHistory from "./pages/TrainingHistory";
 import FoodCamera from "./pages/FoodCamera";
 import FoodHistory from "./pages/FoodHistory";
 import NotFound from "./pages/NotFound";
