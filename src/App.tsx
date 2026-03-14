@@ -46,6 +46,7 @@ const AppContent = () => {
           <Route path="/ai-companion" element={<AICompanion />} />
           <Route path="/daily-status" element={<DailyStatus />} />
           <Route path="/training-summary" element={<TrainingSummary />} />
+          <Route path="/training-history" element={<TrainingHistory />} />
           <Route path="/food-camera" element={<FoodCamera />} />
           <Route path="/food-history" element={<FoodHistory />} />
           <Route path="*" element={<NotFound />} />
