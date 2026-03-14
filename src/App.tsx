@@ -19,6 +19,7 @@ import TrainingSummary from "./pages/TrainingSummary";
 import TrainingHistory from "./pages/TrainingHistory";
 import FoodCamera from "./pages/FoodCamera";
 import FoodHistory from "./pages/FoodHistory";
+import MembershipPage from "./pages/MembershipPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const AppContent = () => {
           <Route path="/training-history" element={<TrainingHistory />} />
           <Route path="/food-camera" element={<FoodCamera />} />
           <Route path="/food-history" element={<FoodHistory />} />
+          <Route path="/membership" element={<MembershipPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
