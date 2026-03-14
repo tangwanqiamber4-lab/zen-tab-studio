@@ -92,7 +92,7 @@ const TrainingSummary = () => {
       {/* 底部按钮 */}
       <div className="mx-5 mt-6 mb-8 space-y-3">
         <button
-          onClick={() => navigate("/training")}
+          onClick={() => navigate("/training-history")}
           className="w-full h-12 bg-keep-green text-keep-green-foreground font-bold text-base rounded-xl transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
         >
           查看训练历史

@@ -13,7 +13,11 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const handleMenuClick = (action: string) => {
-    toast.info("功能开发中，敬请期待");
+    if (action === "membership") {
+      navigate("/membership");
+    } else {
+      toast.info("功能开发中，敬请期待");
+    }
   };
 
   return (
