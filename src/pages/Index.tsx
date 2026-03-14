@@ -134,7 +134,7 @@ const Index = () => {
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-bold text-foreground">最近训练</h2>
           <button
-            onClick={() => navigate("/food-history")}
+            onClick={() => navigate("/training")}
             className="flex items-center gap-0.5 text-xs text-keep-green font-medium"
           >
             查看全部 <ChevronRight size={12} />
