@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, History } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import TopBar from "@/components/home/TopBar";
 import coverHiit from "@/assets/cover-hiit.jpg";
 import coverAbs from "@/assets/cover-abs.jpg";
@@ -11,12 +11,6 @@ const courses = [
   { title: "15分钟腹肌撕裂", duration: "15分钟", cal: 150, level: "K2", cover: coverAbs, tag: "" },
   { title: "30分钟全身燃脂", duration: "30分钟", cal: 320, level: "K4", cover: coverFullbody, tag: "热门" },
   { title: "瑜伽拉伸放松", duration: "25分钟", cal: 100, level: "K1", cover: coverYoga, tag: "" },
-];
-
-const history = [
-  { title: "HIIT燃脂", date: "昨天", duration: "20分钟", cal: 215 },
-  { title: "腹肌训练", date: "3天前", duration: "15分钟", cal: 142 },
-  { title: "全身燃脂", date: "5天前", duration: "30分钟", cal: 310 },
 ];
 
 const Training = () => {
