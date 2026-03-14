@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, History } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import TopBar from "@/components/home/TopBar";
 import coverHiit from "@/assets/cover-hiit.jpg";
 import coverAbs from "@/assets/cover-abs.jpg";
@@ -11,12 +11,6 @@ const courses = [
   { title: "15分钟腹肌撕裂", duration: "15分钟", cal: 150, level: "K2", cover: coverAbs, tag: "" },
   { title: "30分钟全身燃脂", duration: "30分钟", cal: 320, level: "K4", cover: coverFullbody, tag: "热门" },
   { title: "瑜伽拉伸放松", duration: "25分钟", cal: 100, level: "K1", cover: coverYoga, tag: "" },
-];
-
-const history = [
-  { title: "HIIT燃脂", date: "昨天", duration: "20分钟", cal: 215 },
-  { title: "腹肌训练", date: "3天前", duration: "15分钟", cal: 142 },
-  { title: "全身燃脂", date: "5天前", duration: "30分钟", cal: 310 },
 ];
 
 const Training = () => {
@@ -62,27 +56,6 @@ const Training = () => {
         </div>
       </section>
 
-      {/* 训练历史 */}
-      <section className="mx-5 mt-5 mb-6">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-base font-bold text-foreground">训练历史</h2>
-          <button className="flex items-center gap-0.5 text-xs text-keep-green font-medium">
-            <History size={12} />
-            查看全部
-          </button>
-        </div>
-        <div className="bg-card rounded-xl border border-primary/10 divide-y divide-border">
-          {history.map((h, i) => (
-            <div key={i} className="px-4 py-3 flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">{h.title}</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">{h.date} · {h.duration}</p>
-              </div>
-              <span className="text-xs text-orange font-medium">{h.cal}卡</span>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 };

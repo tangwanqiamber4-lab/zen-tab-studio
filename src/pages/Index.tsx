@@ -129,6 +129,51 @@ const Index = () => {
       </section>
 
 
+      {/* 最近训练 */}
+      <section className="mx-5 mt-3 bg-card rounded-xl border border-primary/10 p-4">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-bold text-foreground">最近训练</h2>
+          <button
+            onClick={() => navigate("/food-history")}
+            className="flex items-center gap-0.5 text-xs text-keep-green font-medium"
+          >
+            查看全部 <ChevronRight size={12} />
+          </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground">HIIT燃脂</p>
+            <p className="text-[10px] text-muted-foreground mt-0.5">昨天 · 20分钟</p>
+          </div>
+          <span className="text-xs text-orange font-medium">215卡</span>
+        </div>
+      </section>
+
+      {/* AI训练总结 */}
+      <section className="mx-5 mt-3 bg-card rounded-xl border border-primary/10 p-4">
+        <div className="flex items-center gap-2 mb-1">
+          <Brain size={14} className="text-keep-green flex-shrink-0" />
+          <h2 className="text-sm font-bold text-foreground">AI训练总结</h2>
+        </div>
+        <p className="text-[10px] text-muted-foreground mb-3">根据你最近7天的训练记录分析</p>
+        <div className="space-y-2.5 text-sm">
+          <div>
+            <p className="font-medium text-foreground text-xs mb-1">AI发现：</p>
+            <ul className="space-y-0.5 text-xs text-muted-foreground">
+              <li>• 最近训练以核心训练为主</li>
+              <li>• 有氧训练比例偏少</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-medium text-foreground text-xs mb-1">AI建议：</p>
+            <ul className="space-y-0.5 text-xs text-muted-foreground">
+              <li>• 本周建议增加1次HIIT训练</li>
+              <li>• 帮助提升燃脂效率</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* 会员订阅 */}
       <section className="mx-5 mt-3 mb-6">
         <div className="bg-card rounded-xl border border-primary/10 px-4 py-3 flex items-center gap-3">
