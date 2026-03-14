@@ -58,10 +58,7 @@ const MembershipPage = () => {
 
       {/* Course preview */}
       <section className="mx-5 mt-5">
-        <div className="flex items-center justify-between">
-          <h2 className="text-sm font-bold text-foreground">会员课程预览</h2>
-          <span className="text-xs text-muted-foreground">共 12+ 节</span>
-        </div>
+        <h2 className="text-sm font-bold text-foreground">会员课程预览</h2>
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide mt-3">
           {previewCourses.map((c) => (
             <div key={c.title} className="flex-shrink-0 w-[140px] bg-card rounded-xl border border-primary/10 overflow-hidden">
