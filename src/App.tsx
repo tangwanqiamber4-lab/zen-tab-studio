@@ -16,6 +16,7 @@ import AIInsights from "./pages/AIInsights";
 import AICompanion from "./pages/AICompanion";
 import DailyStatus from "./pages/DailyStatus";
 import TrainingSummary from "./pages/TrainingSummary";
+import TrainingHistory from "./pages/TrainingHistory";
 import FoodCamera from "./pages/FoodCamera";
 import FoodHistory from "./pages/FoodHistory";
 import NotFound from "./pages/NotFound";
@@ -45,6 +46,7 @@ const AppContent = () => {
           <Route path="/ai-companion" element={<AICompanion />} />
           <Route path="/daily-status" element={<DailyStatus />} />
           <Route path="/training-summary" element={<TrainingSummary />} />
+          <Route path="/training-history" element={<TrainingHistory />} />
           <Route path="/food-camera" element={<FoodCamera />} />
           <Route path="/food-history" element={<FoodHistory />} />
           <Route path="*" element={<NotFound />} />
