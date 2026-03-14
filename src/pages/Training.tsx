@@ -56,28 +56,11 @@ const Training = () => {
         </div>
       </section>
 
-      {/* 训练历史 */}
-      <section className="mx-5 mt-5 mb-6">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-base font-bold text-foreground">训练历史</h2>
-          <button className="flex items-center gap-0.5 text-xs text-keep-green font-medium">
-            <History size={12} />
-            查看全部
-          </button>
-        </div>
-        <div className="bg-card rounded-xl border border-primary/10 divide-y divide-border">
-          {history.map((h, i) => (
-            <div key={i} className="px-4 py-3 flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-foreground">{h.title}</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">{h.date} · {h.duration}</p>
-              </div>
-              <span className="text-xs text-orange font-medium">{h.cal}卡</span>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
+  );
+};
+
+export default Training;
   );
 };
 
