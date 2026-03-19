@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Scale, Moon, Battery, Clock } from "lucide-react";
+import { ArrowLeft, Scale, Percent, Moon, Battery, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -19,6 +19,7 @@ const exerciseOptions = [
 const DailyStatus = () => {
   const navigate = useNavigate();
   const [weight, setWeight] = useState("");
+  const [bodyFat, setBodyFat] = useState("");
   const [sleep, setSleep] = useState("7h");
   const [fatigue, setFatigue] = useState("一般");
   const [exerciseTime, setExerciseTime] = useState("20分钟");
