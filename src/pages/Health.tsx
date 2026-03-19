@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Brain, Camera, AlertTriangle, CheckCircle2, History } from "lucide-react";
+import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search, ChevronRight } from "lucide-react";
+import { toast } from "sonner";
 import TopBar from "@/components/home/TopBar";
 import { useFoodRecords } from "@/stores/foodRecords";
 import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
@@ -80,6 +81,18 @@ const Health = () => {
             <p className="text-base font-bold text-foreground">记录今日饮食</p>
             <p className="text-xs text-muted-foreground mt-0.5">拍照识别中式菜品，自动更新今日摄入</p>
           </div>
+        </button>
+      </section>
+
+      {/* 手动记录入口 */}
+      <section className="mx-5 mt-2">
+        <button
+          onClick={() => toast.info("手动记录功能即将上线")}
+          className="w-full bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-3 text-left"
+        >
+          <Search size={16} className="text-muted-foreground flex-shrink-0" />
+          <span className="flex-1 text-sm text-muted-foreground">搜索食物手动记录</span>
+          <ChevronRight size={12} className="text-muted-foreground flex-shrink-0" />
         </button>
       </section>
 

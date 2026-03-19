@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Scale, Moon, Battery, Clock } from "lucide-react";
+import { ArrowLeft, Scale, Percent, Moon, Battery, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -19,6 +19,7 @@ const exerciseOptions = [
 const DailyStatus = () => {
   const navigate = useNavigate();
   const [weight, setWeight] = useState("");
+  const [bodyFat, setBodyFat] = useState("");
   const [sleep, setSleep] = useState("7h");
   const [fatigue, setFatigue] = useState("一般");
   const [exerciseTime, setExerciseTime] = useState("20分钟");
@@ -37,6 +38,7 @@ const DailyStatus = () => {
     saveDailyStatus({
       date: new Date().toISOString().slice(0, 10),
       weight: weight.trim(),
+      bodyFat: bodyFat.trim() || undefined,
       sleep,
       fatigue,
       exerciseTime,
@@ -75,6 +77,27 @@ const DailyStatus = () => {
               step={0.1}
             />
             <span className="text-sm text-muted-foreground font-medium">kg</span>
+          </div>
+        </section>
+
+        {/* 体脂率（可选） */}
+        <section className="bg-card rounded-xl border border-border p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <Percent size={18} className="text-secondary" />
+            <h2 className="text-sm font-bold text-foreground">体脂率（可选）</h2>
+          </div>
+          <div className="flex items-center gap-2">
+            <Input
+              type="number"
+              placeholder="例如：18"
+              value={bodyFat}
+              onChange={(e) => setBodyFat(e.target.value)}
+              className="flex-1"
+              min={3}
+              max={60}
+              step={0.1}
+            />
+            <span className="text-sm text-muted-foreground font-medium">%</span>
           </div>
         </section>
 

@@ -7,7 +7,8 @@ import coverAbs from "@/assets/cover-abs.jpg";
 import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
 
-const filters = ["全部", "减脂", "增肌", "塑形", "恢复", "10分钟", "20分钟", "30分钟+"];
+const goalFilters = ["全部", "减脂", "增肌", "塑形", "恢复"];
+const durationFilters = ["10分钟", "20分钟", "30分钟+"];
 
 const freeCourses = [
   { title: "20分钟HIIT燃脂", level: "K3", duration: "20分钟", cal: 215, cover: coverHiit, tag: "热门" },
@@ -40,20 +41,37 @@ const Training = () => {
       </div>
 
       {/* Filter chips */}
-      <div className="mx-5 mt-3 flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-        {filters.map((f) => (
-          <button
-            key={f}
-            onClick={() => setActiveFilter(f)}
-            className={`flex-shrink-0 text-xs px-3 py-1.5 rounded-full transition-colors ${
-              activeFilter === f
-                ? "bg-keep-green text-keep-green-foreground font-medium"
-                : "bg-card border border-primary/10 text-muted-foreground"
-            }`}
-          >
-            {f}
-          </button>
-        ))}
+      <div className="mx-5 mt-3 space-y-2">
+        <div className="grid grid-cols-5 gap-2">
+          {goalFilters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
+                activeFilter === f
+                  ? "bg-keep-green text-keep-green-foreground font-medium"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-4 gap-2">
+          {durationFilters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
+                activeFilter === f
+                  ? "bg-keep-green text-keep-green-foreground font-medium"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Weekly recommend banner */}
