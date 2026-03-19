@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Brain, Camera, AlertTriangle, CheckCircle2, History } from "lucide-react";
+import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search, ChevronRight } from "lucide-react";
+import { toast } from "sonner";
 import TopBar from "@/components/home/TopBar";
 import { useFoodRecords } from "@/stores/foodRecords";
 import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
