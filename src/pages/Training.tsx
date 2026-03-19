@@ -7,7 +7,8 @@ import coverAbs from "@/assets/cover-abs.jpg";
 import coverFullbody from "@/assets/cover-fullbody.jpg";
 import coverYoga from "@/assets/cover-yoga.jpg";
 
-const filters = ["全部", "减脂", "增肌", "塑形", "恢复", "10分钟", "20分钟", "30分钟+"];
+const goalFilters = ["全部", "减脂", "增肌", "塑形", "恢复"];
+const durationFilters = ["10分钟", "20分钟", "30分钟+"];
 
 const freeCourses = [
   { title: "20分钟HIIT燃脂", level: "K3", duration: "20分钟", cal: 215, cover: coverHiit, tag: "热门" },
