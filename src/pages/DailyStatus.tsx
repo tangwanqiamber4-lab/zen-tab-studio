@@ -38,6 +38,7 @@ const DailyStatus = () => {
     saveDailyStatus({
       date: new Date().toISOString().slice(0, 10),
       weight: weight.trim(),
+      bodyFat: bodyFat.trim() || undefined,
       sleep,
       fatigue,
       exerciseTime,
