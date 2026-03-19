@@ -84,15 +84,21 @@ const Health = () => {
         </button>
       </section>
 
-      {/* 手动记录入口 */}
-      <section className="mx-5 mt-2">
+      {/* 快捷入口 */}
+      <section className="mx-5 mt-3 grid grid-cols-2 gap-3">
         <button
-          onClick={() => toast.info("手动记录功能即将上线")}
-          className="w-full bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-3 text-left"
+          onClick={() => navigate("/food-camera")}
+          className="bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-2 text-left"
+        >
+          <Camera size={16} className="text-keep-green flex-shrink-0" />
+          <span className="text-sm font-medium text-foreground">拍照识别</span>
+        </button>
+        <button
+          onClick={() => toast.info("搜索记录功能即将上线")}
+          className="bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-2 text-left"
         >
           <Search size={16} className="text-muted-foreground flex-shrink-0" />
-          <span className="flex-1 text-sm text-muted-foreground">搜索食物手动记录</span>
-          <ChevronRight size={12} className="text-muted-foreground flex-shrink-0" />
+          <span className="text-sm font-medium text-foreground">搜索食物</span>
         </button>
       </section>
 
