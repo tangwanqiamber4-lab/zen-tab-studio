@@ -176,10 +176,10 @@ const Index = () => {
 
       {/* 会员订阅 */}
       <section className="mx-5 mt-3 mb-6">
-        <div onClick={() => navigate("/membership")} className="bg-card rounded-xl border border-primary/10 px-4 py-3 flex items-center gap-3 cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-md">
-          <span className="text-xl leading-none select-none">👑</span>
+        <div onClick={() => navigate("/membership")} className="bg-muted/30 rounded-xl border border-muted/50 px-3 py-2.5 flex items-center gap-3 cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-md">
+          <span className="text-base leading-none select-none">👑</span>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-foreground">解锁全部 AI 功能</p>
+            <p className="text-xs font-bold text-foreground">解锁全部 AI 功能</p>
             <p className="text-[10px] text-muted-foreground">免费试用7天 · 之后 ¥49/月</p>
           </div>
           <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />

@@ -80,6 +80,27 @@ const DailyStatus = () => {
           </div>
         </section>
 
+        {/* 体脂率（可选） */}
+        <section className="bg-card rounded-xl border border-border p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <Percent size={18} className="text-secondary" />
+            <h2 className="text-sm font-bold text-foreground">体脂率（可选）</h2>
+          </div>
+          <div className="flex items-center gap-2">
+            <Input
+              type="number"
+              placeholder="例如：18"
+              value={bodyFat}
+              onChange={(e) => setBodyFat(e.target.value)}
+              className="flex-1"
+              min={3}
+              max={60}
+              step={0.1}
+            />
+            <span className="text-sm text-muted-foreground font-medium">%</span>
+          </div>
+        </section>
+
         {/* 昨晚睡眠时长 */}
         <section className="bg-card rounded-xl border border-border p-4">
           <div className="flex items-center gap-2 mb-3">

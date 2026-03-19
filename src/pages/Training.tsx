@@ -41,20 +41,37 @@ const Training = () => {
       </div>
 
       {/* Filter chips */}
-      <div className="mx-5 mt-3 flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-        {filters.map((f) => (
-          <button
-            key={f}
-            onClick={() => setActiveFilter(f)}
-            className={`flex-shrink-0 text-xs px-3 py-1.5 rounded-full transition-colors ${
-              activeFilter === f
-                ? "bg-keep-green text-keep-green-foreground font-medium"
-                : "bg-card border border-primary/10 text-muted-foreground"
-            }`}
-          >
-            {f}
-          </button>
-        ))}
+      <div className="mx-5 mt-3 space-y-2">
+        <div className="grid grid-cols-5 gap-2">
+          {goalFilters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
+                activeFilter === f
+                  ? "bg-keep-green text-keep-green-foreground font-medium"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-4 gap-2">
+          {durationFilters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`text-xs px-3 py-1.5 rounded-full transition-colors ${
+                activeFilter === f
+                  ? "bg-keep-green text-keep-green-foreground font-medium"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Weekly recommend banner */}

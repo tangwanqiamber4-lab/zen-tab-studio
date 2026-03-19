@@ -84,6 +84,18 @@ const Health = () => {
         </button>
       </section>
 
+      {/* 手动记录入口 */}
+      <section className="mx-5 mt-2">
+        <button
+          onClick={() => toast.info("手动记录功能即将上线")}
+          className="w-full bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-3 text-left"
+        >
+          <Search size={16} className="text-muted-foreground flex-shrink-0" />
+          <span className="flex-1 text-sm text-muted-foreground">搜索食物手动记录</span>
+          <ChevronRight size={12} className="text-muted-foreground flex-shrink-0" />
+        </button>
+      </section>
+
       {/* ② 今日摄入 */}
       <section className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 p-5">
         <h2 className="text-base font-bold text-foreground mb-3">今日摄入</h2>

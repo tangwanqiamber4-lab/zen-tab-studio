@@ -1,6 +1,7 @@
 export interface DailyStatus {
   date: string;
   weight: string;
+  bodyFat?: string;
   sleep: string;
   fatigue: string;
   exerciseTime: string;
