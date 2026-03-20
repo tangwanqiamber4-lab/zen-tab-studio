@@ -87,8 +87,24 @@ const foodDatabase = [
 
 const quickTags = ["鸡蛋", "米饭", "鸡胸肉", "番茄炒蛋", "豆腐", "西兰花", "苹果", "牛奶", "燕麦片", "馒头"];
 
+const mealOptions: { type: MealType; icon: string }[] = [
+  { type: "breakfast", icon: "🌅" },
+  { type: "lunch", icon: "☀️" },
+  { type: "dinner", icon: "🌙" },
+  { type: "snack", icon: "🍎" },
+];
+
+const getDefaultMeal = (): MealType => {
+  const hour = new Date().getHours();
+  if (hour < 10) return "breakfast";
+  if (hour < 14) return "lunch";
+  if (hour < 20) return "dinner";
+  return "snack";
+};
+
 const FoodSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedMeal, setSelectedMeal] = useState<MealType>(getDefaultMeal());
   const addRecord = useFoodRecords((s) => s.addRecord);
 
   const results = searchValue
