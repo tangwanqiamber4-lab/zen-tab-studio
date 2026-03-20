@@ -58,7 +58,7 @@ const DailyStatus = () => {
         <button onClick={() => navigate(-1)} className="p-1">
           <ArrowLeft size={20} className="text-foreground" />
         </button>
-        <h1 className="text-lg font-bold text-foreground">今日状态记录</h1>
+        <h1 className="text-lg font-bold text-foreground">{isToday ? "更新今日状态" : "今日状态记录"}</h1>
       </div>
 
       <div className="flex-1 px-5 pb-8 space-y-5">

@@ -86,7 +86,7 @@ const Profile = () => {
           <p className="text-sm font-bold text-foreground">免费用户</p>
           <p className="text-[10px] text-muted-foreground">升级会员解锁全部 AI 功能</p>
         </div>
-        <button className="h-8 px-4 bg-keep-green text-keep-green-foreground text-xs font-semibold rounded-lg">
+        <button className="h-8 px-4 bg-keep-green text-keep-green-foreground text-xs font-semibold rounded-lg" onClick={() => navigate("/membership")}>
           升级
         </button>
       </section>
