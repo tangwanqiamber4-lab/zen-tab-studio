@@ -1,6 +1,9 @@
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Target, Settings, Crown, UserCircle } from "lucide-react";
 import { toast } from "sonner";
+import { loadFitnessGoal } from "@/stores/fitnessGoal";
+import { loadDailyStatus } from "@/stores/dailyStatus";
 
 const menuItems = [
   { icon: UserCircle, label: "个人信息", desc: "身高、体重、年龄", action: "info" },
