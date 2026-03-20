@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { saveDailyStatus } from "@/stores/dailyStatus";
+import { saveDailyStatus, loadDailyStatus } from "@/stores/dailyStatus";
 
 const sleepOptions = ["4h", "5h", "6h", "7h", "8h", "9h+"];
 const fatigueOptions = ["很疲劳", "一般", "精力充沛"];
@@ -18,11 +18,14 @@ const exerciseOptions = [
 
 const DailyStatus = () => {
   const navigate = useNavigate();
-  const [weight, setWeight] = useState("");
-  const [bodyFat, setBodyFat] = useState("");
-  const [sleep, setSleep] = useState("7h");
-  const [fatigue, setFatigue] = useState("一般");
-  const [exerciseTime, setExerciseTime] = useState("20分钟");
+  const existing = loadDailyStatus();
+  const isToday = existing?.date === new Date().toISOString().slice(0, 10);
+
+  const [weight, setWeight] = useState(isToday ? existing?.weight ?? "" : "");
+  const [bodyFat, setBodyFat] = useState(isToday ? existing?.bodyFat ?? "" : "");
+  const [sleep, setSleep] = useState(isToday ? existing?.sleep ?? "7h" : "7h");
+  const [fatigue, setFatigue] = useState(isToday ? existing?.fatigue ?? "一般" : "一般");
+  const [exerciseTime, setExerciseTime] = useState(isToday ? existing?.exerciseTime ?? "20分钟" : "20分钟");
 
   const handleSave = () => {
     if (!weight.trim()) {
