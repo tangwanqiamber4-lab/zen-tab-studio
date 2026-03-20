@@ -15,7 +15,25 @@ const menuItems = [
 const Profile = () => {
   const navigate = useNavigate();
 
-  const handleMenuClick = (action: string) => {
+  const goalData = useMemo(() => {
+    const goal = loadFitnessGoal();
+    const status = loadDailyStatus();
+    
+    const currentWeight = parseFloat(status?.weight ?? "62");
+    const targetWeight = parseFloat(goal?.targetWeight ?? "55");
+    const startWeight = parseFloat(goal?.startWeight ?? "63");
+    const goalType = goal?.goalType ?? "减脂";
+    
+    const totalDiff = Math.abs(startWeight - targetWeight);
+    const achieved = Math.abs(startWeight - currentWeight);
+    const remaining = Math.abs(currentWeight - targetWeight);
+    const progress = totalDiff > 0 
+      ? Math.min(Math.round((achieved / totalDiff) * 100), 100) 
+      : 0;
+
+    return { currentWeight, targetWeight, remaining: remaining.toFixed(1), progress, goalType };
+  }, []);
+
     if (action === "membership") {
       navigate("/membership");
     } else if (action === "goal") {
