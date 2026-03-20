@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search } from "lucide-react";
 
