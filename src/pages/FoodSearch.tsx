@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
 import { toast } from "sonner";
-import { useFoodRecords } from "@/stores/foodRecords";
+import { useFoodRecords, MealType, mealLabels } from "@/stores/foodRecords";
 import PageHeader from "@/components/PageHeader";
 
 const foodDatabase = [
@@ -87,8 +87,24 @@ const foodDatabase = [
 
 const quickTags = ["鸡蛋", "米饭", "鸡胸肉", "番茄炒蛋", "豆腐", "西兰花", "苹果", "牛奶", "燕麦片", "馒头"];
 
+const mealOptions: { type: MealType; icon: string }[] = [
+  { type: "breakfast", icon: "🌅" },
+  { type: "lunch", icon: "☀️" },
+  { type: "dinner", icon: "🌙" },
+  { type: "snack", icon: "🍎" },
+];
+
+const getDefaultMeal = (): MealType => {
+  const hour = new Date().getHours();
+  if (hour < 10) return "breakfast";
+  if (hour < 14) return "lunch";
+  if (hour < 20) return "dinner";
+  return "snack";
+};
+
 const FoodSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedMeal, setSelectedMeal] = useState<MealType>(getDefaultMeal());
   const addRecord = useFoodRecords((s) => s.addRecord);
 
   const results = searchValue
@@ -102,7 +118,27 @@ const FoodSearch = () => {
     <div className="flex flex-col">
       <PageHeader title="搜索食物" />
 
-      {/* 搜索框 */}
+      {/* 餐次选择 */}
+      <div className="mx-5 mt-4 mb-1">
+        <p className="text-xs text-muted-foreground mb-2">记录到哪一餐？</p>
+        <div className="grid grid-cols-4 gap-2">
+          {mealOptions.map((item) => (
+            <button
+              key={item.type}
+              onClick={() => setSelectedMeal(item.type)}
+              className={`rounded-xl py-2.5 text-center cursor-pointer transition-colors ${
+                selectedMeal === item.type
+                  ? "bg-keep-green text-keep-green-foreground"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              <span className="text-base block">{item.icon}</span>
+              <span className="text-xs font-medium mt-0.5 block">{mealLabels[item.type]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 px-4 py-3 flex items-center gap-3">
         <Search size={16} className="text-muted-foreground flex-shrink-0" />
         <input
@@ -161,7 +197,7 @@ const FoodSearch = () => {
                       protein: food.protein,
                       carbs: food.carbs,
                       fat: food.fat,
-                      meal: "lunch",
+                      meal: selectedMeal,
                       date: now.toISOString().slice(0, 10),
                       time: `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`,
                     });
