@@ -86,7 +86,7 @@ const Profile = () => {
           <p className="text-sm font-bold text-foreground">免费用户</p>
           <p className="text-[10px] text-muted-foreground">升级会员解锁全部 AI 功能</p>
         </div>
-        <button className="h-8 px-4 bg-keep-green text-keep-green-foreground text-xs font-semibold rounded-lg">
+        <button className="h-8 px-4 bg-keep-green text-keep-green-foreground text-xs font-semibold rounded-lg" onClick={() => navigate("/membership")}>
           升级
         </button>
       </section>
@@ -98,7 +98,7 @@ const Profile = () => {
             <Target size={14} className="text-keep-green" />
             <span className="text-sm font-bold text-foreground">{goalData.goalType}目标进度</span>
           </div>
-          <button className="text-[10px] text-keep-green">编辑</button>
+          <button className="text-[10px] text-keep-green" onClick={() => navigate("/fitness-goal")}>编辑</button>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mt-3">
