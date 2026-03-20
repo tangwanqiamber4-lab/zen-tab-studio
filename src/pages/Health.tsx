@@ -20,8 +20,20 @@ const Health = () => {
   const navigate = useNavigate();
   const records = useFoodRecords((s) => s.records);
 
+  const [expandedMeal, setExpandedMeal] = useState<string | null>(null);
+
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const todayRecords = useMemo(() => records.filter((r) => r.date === today), [records, today]);
+
+  const mealOrder = ["breakfast", "lunch", "dinner", "snack"] as const;
+  const mealGroups = useMemo(() => {
+    const groups: Record<string, typeof todayRecords> = {};
+    todayRecords.forEach((r) => {
+      if (!groups[r.meal]) groups[r.meal] = [];
+      groups[r.meal].push(r);
+    });
+    return groups;
+  }, [todayRecords]);
 
   const totals = useMemo(() => {
     return todayRecords.reduce(
