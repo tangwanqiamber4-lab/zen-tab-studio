@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search } from "lucide-react";
 
 import TopBar from "@/components/home/TopBar";
-import { useFoodRecords } from "@/stores/foodRecords";
+import { useFoodRecords, mealLabels } from "@/stores/foodRecords";
 import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
 import coverPorridge from "@/assets/cover-porridge.jpg";
 import coverFish from "@/assets/cover-steamed-fish.jpg";
@@ -20,21 +20,21 @@ const Health = () => {
   const navigate = useNavigate();
   const records = useFoodRecords((s) => s.records);
 
+  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const todayRecords = useMemo(() => records.filter((r) => r.date === today), [records, today]);
+
   const totals = useMemo(() => {
-    const today = new Date().toISOString().slice(0, 10);
-    return records
-      .filter((r) => r.date === today)
-      .reduce(
-        (acc, r) => {
-          acc.calories += r.calories;
-          acc.protein += r.protein;
-          acc.carbs += r.carbs;
-          acc.fat += r.fat;
-          return acc;
-        },
-        { calories: 0, protein: 0, carbs: 0, fat: 0 }
-      );
-  }, [records]);
+    return todayRecords.reduce(
+      (acc, r) => {
+        acc.calories += r.calories;
+        acc.protein += r.protein;
+        acc.carbs += r.carbs;
+        acc.fat += r.fat;
+        return acc;
+      },
+      { calories: 0, protein: 0, carbs: 0, fat: 0 }
+    );
+  }, [todayRecords]);
 
   const nutrients = [
     { name: "蛋白质", cur: totals.protein, max: targets.protein, color: "bg-secondary" },
@@ -123,6 +123,27 @@ const Health = () => {
             </div>
           ))}
         </div>
+
+        {/* 今日已记录食物列表 */}
+        <div className="flex items-center justify-between mt-4 mb-2">
+          <span className="text-xs font-medium text-foreground">今日已记录</span>
+          <button onClick={() => navigate("/food-history")} className="text-[10px] text-keep-green font-medium">查看全部 ›</button>
+        </div>
+        {todayRecords.length > 0 ? (
+          <div>
+            {todayRecords.map((r) => (
+              <div key={r.id} className="flex items-center justify-between py-2 border-b border-primary/10 last:border-0">
+                <div className="flex items-center">
+                  <span className="text-[10px] bg-keep-green/10 text-keep-green px-1.5 py-0.5 rounded font-medium">{mealLabels[r.meal]}</span>
+                  <span className="text-xs text-foreground ml-2">{r.name}</span>
+                </div>
+                <span className="text-xs text-orange font-medium">{r.calories}卡</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-[10px] text-muted-foreground text-center py-3">今天还没有记录，快去拍照或搜索食物吧</p>
+        )}
       </section>
 
       {/* ③ AI 营养分析 */}
