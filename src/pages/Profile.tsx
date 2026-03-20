@@ -77,35 +77,35 @@ const Profile = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <Target size={14} className="text-keep-green" />
-            <span className="text-sm font-bold text-foreground">减脂目标进度</span>
+            <span className="text-sm font-bold text-foreground">{goalData.goalType}目标进度</span>
           </div>
           <button className="text-[10px] text-keep-green">编辑</button>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mt-3">
           <div className="bg-keep-green/[0.08] rounded-lg py-2.5 text-center">
-            <p className="text-base font-bold text-keep-green">62kg</p>
+            <p className="text-base font-bold text-keep-green">{goalData.currentWeight}kg</p>
             <p className="text-[10px] text-muted-foreground">当前体重</p>
           </div>
           <div className="bg-orange/[0.08] rounded-lg py-2.5 text-center">
-            <p className="text-base font-bold text-orange">55kg</p>
+            <p className="text-base font-bold text-orange">{goalData.targetWeight}kg</p>
             <p className="text-[10px] text-muted-foreground">目标体重</p>
           </div>
           <div className="bg-secondary/[0.08] rounded-lg py-2.5 text-center">
-            <p className="text-base font-bold text-secondary">7kg</p>
+            <p className="text-base font-bold text-secondary">{goalData.remaining}kg</p>
             <p className="text-[10px] text-muted-foreground">还差</p>
           </div>
         </div>
 
         <div className="mt-3">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] text-muted-foreground">进度 11%</span>
+            <span className="text-[10px] text-muted-foreground">进度 {goalData.progress}%</span>
             <span className="text-[10px] text-muted-foreground">已坚持 28 天</span>
           </div>
           <div className="mt-1.5 h-2 w-full rounded-full bg-muted/30 overflow-hidden">
-            <div className="h-full rounded-full bg-keep-green" style={{ width: '11%' }} />
+            <div className="h-full rounded-full bg-keep-green" style={{ width: `${goalData.progress}%` }} />
           </div>
-          <p className="text-[10px] text-muted-foreground mt-1.5 text-center">距目标还差 7kg，继续加油！💪</p>
+          <p className="text-[10px] text-muted-foreground mt-1.5 text-center">距目标还差 {goalData.remaining}kg，继续加油！💪</p>
         </div>
       </section>
 

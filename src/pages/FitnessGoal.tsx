@@ -17,6 +17,13 @@ const FitnessGoal = () => {
   const [showPlan, setShowPlan] = useState(false);
 
   const handleGenerate = () => {
+    const status = loadDailyStatus();
+    saveFitnessGoal({
+      goalType: goal as "减脂" | "增肌" | "塑形",
+      targetWeight,
+      targetDuration: timeFrame as "1个月" | "3个月" | "6个月",
+      startWeight: status?.weight ?? "62",
+    });
     setShowPlan(true);
     toast.success("AI 计划生成成功！");
   };
