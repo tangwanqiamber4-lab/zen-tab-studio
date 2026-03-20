@@ -23,6 +23,7 @@ const quickTags = ["鸡蛋", "米饭", "鸡胸肉", "牛奶", "燕麦", "西兰�
 
 const FoodSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+  const addRecord = useFoodRecords((s) => s.addRecord);
 
   const results = searchValue
     ? foodDatabase.filter((f) => f.name.includes(searchValue))
