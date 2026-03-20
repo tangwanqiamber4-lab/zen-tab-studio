@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search } from "lucide-react";
+import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search, ChevronDown, ChevronUp } from "lucide-react";
 
 import TopBar from "@/components/home/TopBar";
 import { useFoodRecords, mealLabels } from "@/stores/foodRecords";
