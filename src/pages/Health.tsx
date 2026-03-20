@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search } from "lucide-react";
 
 import TopBar from "@/components/home/TopBar";
-import { useFoodRecords } from "@/stores/foodRecords";
+import { useFoodRecords, mealLabels } from "@/stores/foodRecords";
 import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
 import coverPorridge from "@/assets/cover-porridge.jpg";
 import coverFish from "@/assets/cover-steamed-fish.jpg";
