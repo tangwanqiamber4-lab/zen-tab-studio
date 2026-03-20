@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
 import { toast } from "sonner";
+import { useFoodRecords } from "@/stores/foodRecords";
 import PageHeader from "@/components/PageHeader";
 
 const foodDatabase = [
