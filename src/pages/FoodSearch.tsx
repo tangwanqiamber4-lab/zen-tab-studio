@@ -197,7 +197,7 @@ const FoodSearch = () => {
                       protein: food.protein,
                       carbs: food.carbs,
                       fat: food.fat,
-                      meal: "lunch",
+                      meal: selectedMeal,
                       date: now.toISOString().slice(0, 10),
                       time: `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`,
                     });
