@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Brain, Camera, AlertTriangle, CheckCircle2, History, Search } from "lucide-react";
-import { toast } from "sonner";
+
 import TopBar from "@/components/home/TopBar";
 import { useFoodRecords } from "@/stores/foodRecords";
 import coverChicken from "@/assets/cover-chicken-broccoli.jpg";
@@ -94,7 +94,7 @@ const Health = () => {
           <span className="text-sm font-medium text-foreground">拍照识别</span>
         </button>
         <button
-          onClick={() => toast.info("搜索记录功能即将上线")}
+          onClick={() => navigate("/food-search")}
           className="bg-card rounded-xl border border-primary/10 p-3 flex items-center gap-2 text-left"
         >
           <Search size={16} className="text-muted-foreground flex-shrink-0" />
