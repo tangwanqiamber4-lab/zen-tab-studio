@@ -98,7 +98,7 @@ const Profile = () => {
             <Target size={14} className="text-keep-green" />
             <span className="text-sm font-bold text-foreground">{goalData.goalType}目标进度</span>
           </div>
-          <button className="text-[10px] text-keep-green">编辑</button>
+          <button className="text-[10px] text-keep-green" onClick={() => navigate("/fitness-goal")}>编辑</button>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mt-3">
