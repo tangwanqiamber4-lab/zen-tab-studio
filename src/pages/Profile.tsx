@@ -34,6 +34,7 @@ const Profile = () => {
     return { currentWeight, targetWeight, remaining: remaining.toFixed(1), progress, goalType };
   }, []);
 
+  const handleMenuClick = (action: string) => {
     if (action === "membership") {
       navigate("/membership");
     } else if (action === "goal") {
