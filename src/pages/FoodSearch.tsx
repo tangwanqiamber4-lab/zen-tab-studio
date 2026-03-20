@@ -84,7 +84,20 @@ const FoodSearch = () => {
               <div className="flex flex-col items-end gap-2">
                 <span className="text-sm font-bold text-orange">{food.cal}卡</span>
                 <button
-                  onClick={() => toast.success("已记录到今日摄入")}
+                  onClick={() => {
+                    const now = new Date();
+                    addRecord({
+                      name: food.name,
+                      calories: food.cal,
+                      protein: food.protein,
+                      carbs: food.carbs,
+                      fat: food.fat,
+                      meal: "lunch",
+                      date: now.toISOString().slice(0, 10),
+                      time: `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`,
+                    });
+                    toast.success(`已将 ${food.name} 记录到今日摄入`);
+                  }}
                   className="text-[10px] bg-keep-green/10 text-keep-green px-2.5 py-1 rounded-full font-medium transition-all active:scale-[0.95]"
                 >
                   + 记录
