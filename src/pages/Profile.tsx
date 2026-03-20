@@ -15,6 +15,8 @@ const Profile = () => {
   const handleMenuClick = (action: string) => {
     if (action === "membership") {
       navigate("/membership");
+    } else if (action === "goal") {
+      navigate("/fitness-goal");
     } else {
       toast.info("功能开发中，敬请期待");
     }
