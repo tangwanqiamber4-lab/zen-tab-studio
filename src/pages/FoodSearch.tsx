@@ -118,7 +118,27 @@ const FoodSearch = () => {
     <div className="flex flex-col">
       <PageHeader title="搜索食物" />
 
-      {/* 搜索框 */}
+      {/* 餐次选择 */}
+      <div className="mx-5 mt-4 mb-1">
+        <p className="text-xs text-muted-foreground mb-2">记录到哪一餐？</p>
+        <div className="grid grid-cols-4 gap-2">
+          {mealOptions.map((item) => (
+            <button
+              key={item.type}
+              onClick={() => setSelectedMeal(item.type)}
+              className={`rounded-xl py-2.5 text-center cursor-pointer transition-colors ${
+                selectedMeal === item.type
+                  ? "bg-keep-green text-keep-green-foreground"
+                  : "bg-card border border-primary/10 text-muted-foreground"
+              }`}
+            >
+              <span className="text-base block">{item.icon}</span>
+              <span className="text-xs font-medium mt-0.5 block">{mealLabels[item.type]}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="mx-5 mt-4 bg-card rounded-xl border border-primary/10 px-4 py-3 flex items-center gap-3">
         <Search size={16} className="text-muted-foreground flex-shrink-0" />
         <input
