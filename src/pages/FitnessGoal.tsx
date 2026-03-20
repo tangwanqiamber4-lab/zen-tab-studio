@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Target, Brain, Utensils } from "lucide-react";
 import { toast } from "sonner";
 import PageHeader from "@/components/PageHeader";
+import { saveFitnessGoal } from "@/stores/fitnessGoal";
+import { loadDailyStatus } from "@/stores/dailyStatus";
 
 const goalOptions = ["减脂", "增肌", "塑形"];
 const timeOptions = ["1个月", "3个月", "6个月"];
@@ -15,6 +17,13 @@ const FitnessGoal = () => {
   const [showPlan, setShowPlan] = useState(false);
 
   const handleGenerate = () => {
+    const status = loadDailyStatus();
+    saveFitnessGoal({
+      goalType: goal as "减脂" | "增肌" | "塑形",
+      targetWeight,
+      targetDuration: timeFrame as "1个月" | "3个月" | "6个月",
+      startWeight: status?.weight ?? "62",
+    });
     setShowPlan(true);
     toast.success("AI 计划生成成功！");
   };
