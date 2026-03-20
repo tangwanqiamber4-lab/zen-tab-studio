@@ -124,22 +124,41 @@ const Health = () => {
           ))}
         </div>
 
-        {/* 今日已记录食物列表 */}
+        {/* 今日已记录食物列表 - 按餐次分组 */}
         <div className="flex items-center justify-between mt-4 mb-2">
           <span className="text-xs font-medium text-foreground">今日已记录</span>
           <button onClick={() => navigate("/food-history")} className="text-[10px] text-keep-green font-medium">查看全部 ›</button>
         </div>
-        {todayRecords.length > 0 ? (
+        {mealOrder.filter(m => mealGroups[m]).length > 0 ? (
           <div>
-            {todayRecords.map((r) => (
-              <div key={r.id} className="flex items-center justify-between py-2 border-b border-primary/10 last:border-0">
-                <div className="flex items-center">
-                  <span className="text-[10px] bg-keep-green/10 text-keep-green px-1.5 py-0.5 rounded font-medium">{mealLabels[r.meal]}</span>
-                  <span className="text-xs text-foreground ml-2">{r.name}</span>
+            {mealOrder.filter(m => mealGroups[m]).map((meal) => {
+              const items = mealGroups[meal]!;
+              const totalCal = items.reduce((s, r) => s + r.calories, 0);
+              const isOpen = expandedMeal === meal;
+              return (
+                <div key={meal}>
+                  <div
+                    onClick={() => setExpandedMeal(isOpen ? null : meal)}
+                    className="flex items-center justify-between py-2.5 border-b border-primary/10 last:border-0 cursor-pointer"
+                  >
+                    <div className="flex items-center">
+                      <span className="text-[10px] bg-keep-green/10 text-keep-green px-1.5 py-0.5 rounded font-medium">{mealLabels[meal as keyof typeof mealLabels]}</span>
+                      <span className="text-xs text-muted-foreground ml-2">{items.length}样食物</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="text-xs text-orange font-medium">{totalCal}卡</span>
+                      {isOpen ? <ChevronUp size={12} className="text-muted-foreground ml-2" /> : <ChevronDown size={12} className="text-muted-foreground ml-2" />}
+                    </div>
+                  </div>
+                  {isOpen && items.map((r) => (
+                    <div key={r.id} className="flex items-center justify-between py-1.5 pl-4 border-b border-primary/5 last:border-0 bg-muted/20">
+                      <span className="text-xs text-foreground">{r.name}</span>
+                      <span className="text-[10px] text-muted-foreground">{r.calories}卡</span>
+                    </div>
+                  ))}
                 </div>
-                <span className="text-xs text-orange font-medium">{r.calories}卡</span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <p className="text-[10px] text-muted-foreground text-center py-3">今天还没有记录，快去拍照或搜索食物吧</p>
