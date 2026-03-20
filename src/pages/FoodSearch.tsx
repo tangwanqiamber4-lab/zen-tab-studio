@@ -85,7 +85,7 @@ const foodDatabase = [
   { name: "奶茶", unit: "1杯(500ml)", cal: 380, protein: 4.0, carbs: 60.0, fat: 12.0 },
 ];
 
-const quickTags = ["鸡蛋", "米饭", "鸡胸肉", "牛奶", "燕麦", "西兰花", "苹果", "豆腐"];
+const quickTags = ["鸡蛋", "米饭", "鸡胸肉", "番茄炒蛋", "豆腐", "西兰花", "苹果", "牛奶", "燕麦片", "馒头"];
 
 const FoodSearch = () => {
   const [searchValue, setSearchValue] = useState("");
