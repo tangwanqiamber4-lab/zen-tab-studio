@@ -150,7 +150,7 @@ const Index = () => {
       </section>
 
       {/* AI训练总结 */}
-      <section className="mx-5 mt-3 bg-card rounded-xl border border-primary/10 p-4">
+      <section className="mx-5 mt-3 mb-6 bg-card rounded-xl border border-primary/10 p-4">
         <div className="flex items-center gap-2 mb-1">
           <Brain size={14} className="text-keep-green flex-shrink-0" />
           <h2 className="text-sm font-bold text-foreground">AI训练总结</h2>
@@ -171,18 +171,6 @@ const Index = () => {
               <li>• 帮助提升燃脂效率</li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      {/* 会员订阅 */}
-      <section className="mx-5 mt-3 mb-6">
-        <div onClick={() => navigate("/membership")} className="bg-muted/30 rounded-xl border border-muted/50 px-3 py-2.5 flex items-center gap-3 cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-md">
-          <span className="text-base leading-none select-none">👑</span>
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-bold text-foreground">解锁全部 AI 功能</p>
-            <p className="text-[10px] text-muted-foreground">免费试用7天 · 之后 ¥49/月</p>
-          </div>
-          <ChevronRight size={16} className="text-muted-foreground flex-shrink-0" />
         </div>
       </section>
     </div>
