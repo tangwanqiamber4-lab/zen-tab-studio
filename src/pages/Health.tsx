@@ -20,21 +20,21 @@ const Health = () => {
   const navigate = useNavigate();
   const records = useFoodRecords((s) => s.records);
 
+  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const todayRecords = useMemo(() => records.filter((r) => r.date === today), [records, today]);
+
   const totals = useMemo(() => {
-    const today = new Date().toISOString().slice(0, 10);
-    return records
-      .filter((r) => r.date === today)
-      .reduce(
-        (acc, r) => {
-          acc.calories += r.calories;
-          acc.protein += r.protein;
-          acc.carbs += r.carbs;
-          acc.fat += r.fat;
-          return acc;
-        },
-        { calories: 0, protein: 0, carbs: 0, fat: 0 }
-      );
-  }, [records]);
+    return todayRecords.reduce(
+      (acc, r) => {
+        acc.calories += r.calories;
+        acc.protein += r.protein;
+        acc.carbs += r.carbs;
+        acc.fat += r.fat;
+        return acc;
+      },
+      { calories: 0, protein: 0, carbs: 0, fat: 0 }
+    );
+  }, [todayRecords]);
 
   const nutrients = [
     { name: "蛋白质", cur: totals.protein, max: targets.protein, color: "bg-secondary" },
