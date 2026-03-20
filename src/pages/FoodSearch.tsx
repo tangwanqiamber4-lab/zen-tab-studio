@@ -92,7 +92,10 @@ const FoodSearch = () => {
   const addRecord = useFoodRecords((s) => s.addRecord);
 
   const results = searchValue
-    ? foodDatabase.filter((f) => f.name.includes(searchValue))
+    ? foodDatabase.filter((f) =>
+        f.name.includes(searchValue) ||
+        searchValue.includes(f.name.slice(0, 2))
+      )
     : [];
 
   return (
