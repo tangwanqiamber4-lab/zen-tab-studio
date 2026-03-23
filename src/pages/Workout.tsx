@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
+import coverHiit from "@/assets/cover-hiit.jpg";
 
 const feedbacks = [
   { text: "✓ 很好！背部保持挺直", type: "success" as const },
