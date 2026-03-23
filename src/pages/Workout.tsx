@@ -23,6 +23,7 @@ const Workout = () => {
   }, []);
 
   const currentFeedback = feedbacks[feedbackIndex];
+  const isWarn = currentFeedback.type === "warn";
 
   const handleFinish = () => {
     toast.success("训练已完成！");
@@ -60,59 +61,119 @@ const Workout = () => {
 
       {/* Camera area */}
       <div className="flex-1 relative flex items-center justify-center mx-5 my-3">
-        <div className="w-full h-full rounded-xl border-2 border-dashed border-white/30 flex flex-col items-center justify-center gap-3 relative">
-          <span className="text-5xl select-none">📹</span>
-          <p className="text-white text-base">摄像头实时画面</p>
-          <p className="text-white/60 text-xs">请将手机放置在合适位置</p>
+        <div className="w-full h-full rounded-xl relative overflow-hidden" style={{ background: "#2a2a2a" }}>
+          {/* Simulated camera noise texture */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' fill='white'/%3E%3C/svg%3E")`,
+          }} />
 
-          {/* Stick figure overlay */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 400">
+          {/* Human figure SVG with skeleton tracking */}
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet">
+            {/* Body silhouette (semi-transparent white) */}
             {/* Head */}
-            <circle cx="150" cy="80" r="16" fill="none" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Neck */}
-            <line x1="150" y1="96" x2="150" y2="120" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Shoulders */}
-            <line x1="110" y1="120" x2="190" y2="120" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Left arm */}
-            <line x1="110" y1="120" x2="90" y2="180" stroke="#00FF88" strokeWidth="2.5" />
-            <line x1="90" y1="180" x2="85" y2="230" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Right arm */}
-            <line x1="190" y1="120" x2="210" y2="180" stroke="#00FF88" strokeWidth="2.5" />
-            <line x1="210" y1="180" x2="215" y2="230" stroke="#00FF88" strokeWidth="2.5" />
+            <ellipse cx="180" cy="85" rx="22" ry="26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
             {/* Torso */}
-            <line x1="150" y1="120" x2="150" y2="220" stroke="#00FF88" strokeWidth="2.5" />
+            <path d="M155 115 Q150 120 148 160 L145 240 Q145 250 155 255 L205 255 Q215 250 215 240 L212 160 Q210 120 205 115 Z" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+            {/* Left arm */}
+            <path d="M148 125 Q130 150 115 175 Q105 195 120 220 L145 240" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+            {/* Right arm */}
+            <path d="M212 125 Q230 150 245 175 Q255 195 240 220 L215 240" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+            {/* Left leg - bent for squat */}
+            <path d="M155 255 Q140 290 125 330 Q115 355 130 380 L140 420" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+            {/* Right leg - bent for squat */}
+            <path d="M205 255 Q220 290 235 330 Q245 355 230 380 L220 420" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+
+            {/* AI skeleton tracking overlay (green lines) */}
+            {/* Head */}
+            <circle cx="180" cy="80" r="14" fill="none" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Neck */}
+            <line x1="180" y1="94" x2="180" y2="120" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Shoulders */}
+            <line x1="145" y1="125" x2="215" y2="125" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Left upper arm */}
+            <line x1="145" y1="125" x2="120" y2="170" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Left forearm - extended forward */}
+            <line x1="120" y1="170" x2="105" y2="210" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Right upper arm */}
+            <line x1="215" y1="125" x2="240" y2="170" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Right forearm - extended forward */}
+            <line x1="240" y1="170" x2="255" y2="210" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Spine */}
+            <line x1="180" y1="120" x2="180" y2="250" stroke="#00FF88" strokeWidth="2.5" />
             {/* Hips */}
-            <line x1="120" y1="220" x2="180" y2="220" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Left leg */}
-            <line x1="120" y1="220" x2="105" y2="300" stroke="#00FF88" strokeWidth="2.5" />
-            <line x1="105" y1="300" x2="100" y2="360" stroke="#00FF88" strokeWidth="2.5" />
-            {/* Right leg */}
-            <line x1="180" y1="220" x2="195" y2="300" stroke="#00FF88" strokeWidth="2.5" />
-            <line x1="195" y1="300" x2="200" y2="360" stroke="#00FF88" strokeWidth="2.5" />
+            <line x1="155" y1="250" x2="205" y2="250" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Left thigh - bent */}
+            <line x1="155" y1="250" x2="130" y2="330" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Left shin */}
+            <line x1="130" y1="330" x2="135" y2="410" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Right thigh - bent */}
+            <line x1="205" y1="250" x2="230" y2="330" stroke="#00FF88" strokeWidth="2.5" />
+            {/* Right shin */}
+            <line x1="230" y1="330" x2="225" y2="410" stroke="#00FF88" strokeWidth="2.5" />
+
             {/* Joint dots */}
             {[
-              [110, 120], [190, 120], [90, 180], [210, 180], [85, 230], [215, 230],
-              [150, 120], [150, 220], [120, 220], [180, 220],
-              [105, 300], [195, 300], [100, 360], [200, 360],
+              [180, 80],   // head
+              [180, 120],  // neck
+              [145, 125], [215, 125],  // shoulders
+              [120, 170], [240, 170],  // elbows
+              [105, 210], [255, 210],  // wrists
+              [180, 250],  // center hip
+              [155, 250], [205, 250],  // hips
+              [135, 410], [225, 410],  // ankles
             ].map(([cx, cy], i) => (
-              <circle key={i} cx={cx} cy={cy} r="4" fill="#00FF88" />
+              <circle key={`joint-${i}`} cx={cx} cy={cy} r="5" fill="#00FF88" />
             ))}
+
+            {/* Knee joints - dynamic color based on feedback */}
+            <circle cx={130} cy={330} r="5" fill={isWarn ? "#F97316" : "#00FF88"} />
+            <circle cx={230} cy={330} r="5" fill={isWarn ? "#F97316" : "#00FF88"} />
+
+            {/* Knee warning marker - only visible on warn */}
+            {isWarn && (
+              <g className="animate-pulse">
+                <circle cx={130} cy={330} r="18" fill="none" stroke="#F97316" strokeWidth="2" opacity="0.8" />
+                <circle cx={130} cy={330} r="12" fill="rgba(249,115,22,0.2)" />
+                <text x={130} y={335} textAnchor="middle" fill="#F97316" fontSize="14" fontWeight="bold">!</text>
+
+                <circle cx={230} cy={330} r="18" fill="none" stroke="#F97316" strokeWidth="2" opacity="0.8" />
+                <circle cx={230} cy={330} r="12" fill="rgba(249,115,22,0.2)" />
+                <text x={230} y={335} textAnchor="middle" fill="#F97316" fontSize="14" fontWeight="bold">!</text>
+              </g>
+            )}
+
+            {/* Tracking lines glow effect */}
+            <line x1="180" y1="94" x2="180" y2="120" stroke="#00FF88" strokeWidth="1" opacity="0.3" filter="url(#glow)" />
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
           </svg>
-        </div>
 
-        {/* Score badge */}
-        <div
-          className="absolute top-4 right-4 rounded-full flex flex-col items-center justify-center border-[3px] border-keep-green"
-          style={{ width: 80, height: 80, background: "rgba(255,255,255,0.9)" }}
-        >
-          <span className="text-[28px] font-bold text-keep-green leading-none">92</span>
-          <span className="text-xs text-muted-foreground leading-none mt-0.5">分</span>
-          <span className="text-[10px] text-muted-foreground leading-none mt-0.5">动作标准度</span>
-        </div>
+          {/* Score badge */}
+          <div
+            className="absolute top-4 right-4 rounded-full flex flex-col items-center justify-center"
+            style={{ width: 76, height: 76, background: "rgba(255,255,255,0.12)", border: "2px solid rgba(0,255,136,0.5)" }}
+          >
+            <span className="text-2xl font-bold leading-none" style={{ color: "#00FF88" }}>92</span>
+            <span className="text-[10px] leading-none mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>动作评分</span>
+          </div>
 
-        {/* Correction count */}
-        <div className="absolute bottom-4 right-4 rounded-lg px-3 py-2" style={{ background: "rgba(255,255,255,0.15)" }}>
-          <span className="text-xs text-white/80">本次纠正：5次</span>
+          {/* Correction count */}
+          <div className="absolute bottom-4 right-4 rounded-lg px-3 py-2" style={{ background: "rgba(255,255,255,0.1)" }}>
+            <span className="text-xs text-white/70">本次纠正：5次</span>
+          </div>
+
+          {/* Camera indicator */}
+          <div className="absolute top-4 left-4 flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <span className="text-[10px] text-white/50 font-medium">REC</span>
+          </div>
         </div>
       </div>
 
