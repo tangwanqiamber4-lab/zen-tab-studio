@@ -63,10 +63,10 @@ const Workout = () => {
       {/* Camera area */}
       <div className="flex-1 relative flex items-center justify-center mx-5 my-3">
         <div className="w-full h-full rounded-xl relative overflow-hidden" style={{ background: "#2a2a2a" }}>
-          {/* Simulated camera noise texture */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' fill='white'/%3E%3C/svg%3E")`,
-          }} />
+          {/* Real camera background image */}
+          <img src={coverHiit} alt="训练画面" className="absolute inset-0 w-full h-full object-cover opacity-70" />
+          {/* Dark overlay for contrast */}
+          <div className="absolute inset-0 bg-black/30" />
 
           {/* Human figure SVG with skeleton tracking */}
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid meet">
