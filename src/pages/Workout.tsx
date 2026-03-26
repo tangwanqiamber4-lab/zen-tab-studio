@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
-import coverHiit from "@/assets/cover-hiit.jpg";
+
 
 const feedbacks = [
   { text: "✓ 很好！背部保持挺直", type: "success" as const },
@@ -64,7 +64,14 @@ const Workout = () => {
       <div className="flex-1 relative flex items-center justify-center mx-5 my-3">
         <div className="w-full h-full rounded-xl relative overflow-hidden" style={{ background: "#2a2a2a" }}>
           {/* Real camera background image */}
-          <img src={coverHiit} alt="训练画面" className="absolute inset-0 w-full h-full object-cover opacity-70" />
+          <video
+            src="https://raw.githubusercontent.com/tangwanqiamber4-lab/zen-tab-studio/main/AI_%E5%8A%A8%E4%BD%9C%E7%BA%A0%E6%AD%A3%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-70"
+          />
           {/* Dark overlay for contrast */}
           <div className="absolute inset-0 bg-black/30" />
 
